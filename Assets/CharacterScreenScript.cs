@@ -11,7 +11,7 @@ public class CharacterScreenScript : MonoBehaviour
     {
         gameObject.SetActive(false);
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic_script>();
-        logic.StartingItem(5);
+        logic.StartingItem(10);
         Time.timeScale = 1;
     }
     public void WMButton()

@@ -7,8 +7,11 @@ public class ItemCatalogScript : MonoBehaviour
 {
     public GameObject fireMelee, waterMelee, earthMelee, airMelee, poisonMelee;
     public GameObject fireRanged, waterRanged, earthRanged, airRanged, poisonRanged;
+    public GameObject fireUtility, waterUtility, earthUtility, airUtility, poisonUtility;
 
-    private int FM = 1,WM = 1,EM = 1,AM = 1,PM = 1,FR = 1,WR = 1,ER = 1, AR = 1, PR = 1;
+    private int FM = 1, WM = 1, EM = 1, AM = 1, PM = 1,
+                FR = 1, WR = 1, ER = 1, AR = 1, PR = 1,
+                FU = 1, WU = 1, EU = 1, AU = 1, PU = 1;
 
 
     public GameObject GetItem(int id)
@@ -34,6 +37,16 @@ public class ItemCatalogScript : MonoBehaviour
             case 8: return airRanged;
 
             case 9: return poisonRanged;
+
+            case 10: return fireUtility;
+
+            case 11: return waterUtility;
+
+            case 12: return earthUtility;
+
+            case 13: return airUtility;
+
+            case 14: return poisonUtility;
 
             default: return earthMelee;
             }
@@ -114,6 +127,41 @@ public class ItemCatalogScript : MonoBehaviour
             case (9,5): return 2.2f;
             case (9,6): return 2f;
 
+            case (10,1): return 0;
+            case (10,2): return 0;
+            case (10,3): return 0;
+            case (10,4): return 0;
+            case (10,5): return 0;
+            case (10,6): return 0;
+
+            case (11,1): return 3;
+            case (11,2): return 2.8f;
+            case (11,3): return 2.6f;
+            case (11,4): return 2.4f;
+            case (11,5): return 2.2f;
+            case (11,6): return 2f;
+
+            case (12,1): return 3;
+            case (12,2): return 2.8f;
+            case (12,3): return 2.6f;
+            case (12,4): return 2.4f;
+            case (12,5): return 2.2f;
+            case (12,6): return 2f;
+
+            case (13,1): return 3;
+            case (13,2): return 2.8f;
+            case (13,3): return 2.6f;
+            case (13,4): return 2.4f;
+            case (13,5): return 2.2f;
+            case (13,6): return 2f;
+
+            case (14,1): return 3;
+            case (14,2): return 2.8f;
+            case (14,3): return 2.6f;
+            case (14,4): return 2.4f;
+            case (14,5): return 2.2f;
+            case (14,6): return 2f;
+
             default: return 1;
             }
     }
@@ -193,6 +241,41 @@ public class ItemCatalogScript : MonoBehaviour
             case (9,5): return 3;
             case (9,6): return 3;
 
+            case (10,1): return 10;
+            case (10,2): return 10;
+            case (10,3): return 10;
+            case (10,4): return 10;
+            case (10,5): return 10;
+            case (10,6): return 10;
+
+            case (11,1): return 3;
+            case (11,2): return 2.8f;
+            case (11,3): return 2.6f;
+            case (11,4): return 2.4f;
+            case (11,5): return 2.2f;
+            case (11,6): return 2f;
+
+            case (12,1): return 3;
+            case (12,2): return 2.8f;
+            case (12,3): return 2.6f;
+            case (12,4): return 2.4f;
+            case (12,5): return 2.2f;
+            case (12,6): return 2f;
+
+            case (13,1): return 3;
+            case (13,2): return 2.8f;
+            case (13,3): return 2.6f;
+            case (13,4): return 2.4f;
+            case (13,5): return 2.2f;
+            case (13,6): return 2f;
+
+            case (14,1): return 3;
+            case (14,2): return 2.8f;
+            case (14,3): return 2.6f;
+            case (14,4): return 2.4f;
+            case (14,5): return 2.2f;
+            case (14,6): return 2f;
+
             default: return 1;
         }
     }
@@ -271,6 +354,41 @@ public class ItemCatalogScript : MonoBehaviour
             case (9,5): return 1.8f;
             case (9,6): return 2f;
 
+            case (10,1): return 1;
+            case (10,2): return 1;
+            case (10,3): return 1;
+            case (10,4): return 1;
+            case (10,5): return 1;
+            case (10,6): return 1;
+
+            case (11,1): return 3;
+            case (11,2): return 2.8f;
+            case (11,3): return 2.6f;
+            case (11,4): return 2.4f;
+            case (11,5): return 2.2f;
+            case (11,6): return 2f;
+
+            case (12,1): return 3;
+            case (12,2): return 2.8f;
+            case (12,3): return 2.6f;
+            case (12,4): return 2.4f;
+            case (12,5): return 2.2f;
+            case (12,6): return 2f;
+
+            case (13,1): return 3;
+            case (13,2): return 2.8f;
+            case (13,3): return 2.6f;
+            case (13,4): return 2.4f;
+            case (13,5): return 2.2f;
+            case (13,6): return 2f;
+
+            case (14,1): return 3;
+            case (14,2): return 2.8f;
+            case (14,3): return 2.6f;
+            case (14,4): return 2.4f;
+            case (14,5): return 2.2f;
+            case (14,6): return 2f;
+
             default: return 1;
         }
     }
@@ -299,6 +417,16 @@ public class ItemCatalogScript : MonoBehaviour
 
             case 9: return PR;
 
+            case 10: return FU;
+
+            case 11: return WU;
+
+            case 12: return EU;
+
+            case 13: return AU;
+
+            case 14: return PU;
+
             default: return 1;
             }
     }
@@ -326,6 +454,16 @@ public class ItemCatalogScript : MonoBehaviour
             case 8: AR++; break;
 
             case 9: PR++; break;
+
+            case 10: FU++; break;
+
+            case 11: WU++; break;
+
+            case 12: EU++; break;
+
+            case 13: AU++; break;
+
+            case 14: PU++; break;
             }
     }
 }

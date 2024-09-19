@@ -41,44 +41,9 @@ public class Player_script : MonoBehaviour
         if(horizontal == 1)
         {
             transform.rotation = Quaternion.Euler(0,0,0);
-            //Vampire survivors like movement dont need 8 or 4 directions
-            /*if(vertical == 1)
-            {
-                transform.rotation = Quaternion.Euler(0,0,45);
-            }
-            else if(vertical == 0)
-            {
-                transform.rotation = Quaternion.Euler(0,0,0);
-            }else 
-            {
-                transform.rotation = Quaternion.Euler(0,0,315);
-            }
-        }else if(horizontal == 0){
-            if(vertical == 1)
-            {
-                transform.rotation = Quaternion.Euler(0,0,90);
-            }
-            else if(vertical == 0)
-            {
-                transform.rotation = Quaternion.Euler(0,0,0);
-            }else 
-            {
-                transform.rotation = Quaternion.Euler(0,0,270);
-            }*/
-        }else {
+
+        }else if(horizontal == -1){
             transform.rotation = Quaternion.Euler(0,0,180);
-            /*
-            if(vertical == 1)
-            {
-                transform.rotation = Quaternion.Euler(0,0,135);
-            }
-            else if(vertical == 0)
-            {
-                transform.rotation = Quaternion.Euler(0,0,180);
-            }else 
-            {
-                transform.rotation = Quaternion.Euler(0,0,225);
-            }*/
         }
         
         if (horizontal != 0 && vertical != 0)

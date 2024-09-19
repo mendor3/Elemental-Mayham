@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1559899496474639981}
   - component: {fileID: 1566350410646113978}
-  - component: {fileID: 8558132432722124217}
-  - component: {fileID: 6926291159431857562}
+  - component: {fileID: 4804884640202172164}
+  - component: {fileID: 5012433201545487209}
   m_Layer: 0
-  m_Name: AttackWaterMelee
+  m_Name: UtilityFire
   m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 6354631274386336704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.9, y: -3.03, z: -1.6124339}
-  m_LocalScale: {x: 30, y: 3, z: 1}
+  m_LocalPosition: {x: 6.915, y: -3.005, z: -1.6124339}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0.27341703, b: 0.62352943, a: 0.4117647}
+  m_Sprite: {fileID: 21300000, guid: 7eaa854ffa1b7b84bb7da194d8470dc3, type: 3}
+  m_Color: {r: 1, g: 0.8034527, b: 0.20188677, a: 0.4117647}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,8 +86,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8558132432722124217
-BoxCollider2D:
+--- !u!58 &4804884640202172164
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,20 +118,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.01, y: -0.03}
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
---- !u!114 &6926291159431857562
+  m_Radius: 0.45
+--- !u!114 &5012433201545487209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,13 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6354631274386336704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35e646a3e20cfbf4290cab53d2690072, type: 3}
+  m_Script: {fileID: 11500000, guid: 663f679234dcf334895ab82a4ef21475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  player: {fileID: 0}
-  playerRenderer: {fileID: 0}
-  myRenderer: {fileID: 0}
-  demage: 2
-  duration: 1
-  count: 8

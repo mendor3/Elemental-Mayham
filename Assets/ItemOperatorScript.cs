@@ -64,6 +64,15 @@ public class ItemOperatorScript : MonoBehaviour
                     countMax = 3;
                     interval = realDuration / countMax;
                     break;
+            case 8: duration = itemCatalog.GetDuration(id,level);
+                    realDuration = duration * 50;
+                    break;
+            case 9: duration = itemCatalog.GetDuration(id,level);
+                    realDuration = duration * 50;
+                    break;
+            case 10:duration = itemCatalog.GetDuration(id,level);
+                    realDuration = duration * 50;
+                    break;
             default: break;
         }
     }
@@ -95,6 +104,8 @@ public class ItemOperatorScript : MonoBehaviour
             case 8: timer = AirRanged(timer); break;
 
             case 9: timer = PoisonRanged(timer); break;
+
+            case 10: timer = FireUtility(timer); break;
 
             default: break;
         }
@@ -382,6 +393,19 @@ public class ItemOperatorScript : MonoBehaviour
             attackObj.GetComponent<AttackPoisonRangedScript>().right = right;
             Instantiate( attackObj, location, Quaternion.identity);
             right = !right;
+            return -(int)realDuration;
+        }
+        return timer;
+    }
+
+    private int FireUtility(int timer)
+    {
+        if ( timer >= (int)realFrequency)
+        {
+            CheckLevel();
+            attackObj = itemCatalog.GetItem(id);
+            Vector3 location = player.transform.position;
+            Instantiate( attackObj, location, Quaternion.identity);
             return -(int)realDuration;
         }
         return timer;

@@ -8,7 +8,7 @@ public class LevelUpScreenScript : MonoBehaviour
     public TMP_Text txtChoice1;
     public TMP_Text txtChoice2;
     public TMP_Text txtChoice3;
-    public Logic_script logic;
+    public InventoryScript inventory;
     public ItemCatalogScript catalog;
     public GameObject obj1;
     public GameObject obj2;
@@ -34,20 +34,20 @@ public class LevelUpScreenScript : MonoBehaviour
     public void ChoiceButton1()
     {
         Time.timeScale = 1;
-        logic.InventoryUpdate(id1);
+        inventory.InventoryUpdate(id1);
         gameObject.SetActive(false);
     }
     public void ChoiceButton2()
     {
         Time.timeScale = 1;
-        logic.InventoryUpdate(id2);
+        inventory.InventoryUpdate(id2);
         gameObject.SetActive(false);
     }
 
     public void ChoiceButton3()
     {
         Time.timeScale = 1;
-        logic.InventoryUpdate(id3);
+        inventory.InventoryUpdate(id3);
         gameObject.SetActive(false);
     }
 }

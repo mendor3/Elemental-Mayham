@@ -581,7 +581,7 @@ MonoBehaviour:
   txtChoice1: {fileID: 206402474}
   txtChoice2: {fileID: 1959942372}
   txtChoice3: {fileID: 1799662207}
-  logic: {fileID: 2082441946}
+  inventory: {fileID: 2082441950}
   catalog: {fileID: 2082441948}
   obj1: {fileID: 1770512662}
   obj2: {fileID: 1108623061}
@@ -1648,6 +1648,8 @@ GameObject:
   - component: {fileID: 755049011}
   - component: {fileID: 755049012}
   - component: {fileID: 755049013}
+  - component: {fileID: 755049015}
+  - component: {fileID: 755049014}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1800,6 +1802,34 @@ MonoBehaviour:
   logic: {fileID: 0}
   attack: {fileID: 6354631274386336704, guid: c9fafe4a9b52b9345a87ba0df2cd0d5f, type: 3}
   player_speed: 5
+--- !u!114 &755049014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755049006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39175e24d61f1b4f9987bbc942e86d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  xp: 0
+--- !u!114 &755049015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755049006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15fae356c8f79c4a9e305420176b15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  logic: {fileID: 0}
 --- !u!1 &765465726
 GameObject:
   m_ObjectHideFlags: 0
@@ -5296,6 +5326,7 @@ GameObject:
   - component: {fileID: 2082441946}
   - component: {fileID: 2082441948}
   - component: {fileID: 2082441949}
+  - component: {fileID: 2082441950}
   m_Layer: 0
   m_Name: Logic_Object
   m_TagString: Logic
@@ -5315,11 +5346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a88f58553249141a94d8a82bff74ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  spawnOffset: 5
-  level: 1
-  xp: 0
-  maxItem: 6
   timeCount: {fileID: 1552779482}
   healt: {fileID: 747404666}
   levelText: {fileID: 885406624}
@@ -5334,7 +5360,8 @@ MonoBehaviour:
   healthBar: {fileID: 1922318123}
   myCamera: {fileID: 519420031}
   xpBar: {fileID: 320415521}
-  playerRenderer: {fileID: 755049008}
+  inventory: {fileID: 2082441950}
+  spawnOffset: 5
 --- !u!4 &2082441947
 Transform:
   m_ObjectHideFlags: 0
@@ -5372,6 +5399,11 @@ MonoBehaviour:
   earthRanged: {fileID: 6041315840449104055, guid: fd36b1c4fda719e47baf0c162a0e0127, type: 3}
   airRanged: {fileID: 6354631274386336704, guid: dec20f32fbc7f814892d2528327bf7dc, type: 3}
   poisonRanged: {fileID: 6354631274386336704, guid: 644769c329443434faba18980923d5e2, type: 3}
+  fireUtility: {fileID: 6354631274386336704, guid: 996c3ac13d0972f43a176f1557830cb4, type: 3}
+  waterUtility: {fileID: 0}
+  earthUtility: {fileID: 0}
+  airUtility: {fileID: 0}
+  poisonUtility: {fileID: 0}
 --- !u!114 &2082441949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5387,6 +5419,22 @@ MonoBehaviour:
   meleeEnemy0: {fileID: 3224314702945941170, guid: 01a7657738ca8a049aa59467047b4429, type: 3}
   meleeEnemy1: {fileID: 3224314702945941170, guid: dcc03056cef0c1e4c9d969ffd556a67e, type: 3}
   meleeEnemy2: {fileID: 3224314702945941170, guid: 53ffdea9a9c41ed47a35731810d2ef86, type: 3}
+--- !u!114 &2082441950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082441945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2781bbade01e40e44a7fcc7af11322a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxItem: 6
+  itemCatalog: {fileID: 2082441948}
+  operatorObj: {fileID: 327664324242080872, guid: 8080b365e7519e9489e7b02375764d95, type: 3}
+  player: {fileID: 755049006}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

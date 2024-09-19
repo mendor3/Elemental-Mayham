@@ -9,7 +9,7 @@ public class MeleeEnemy_script : MonoBehaviour
 {
     /* PUBLIC */
     public GameObject player;
-    public Logic_script logic;
+    public PlayerHpScript playerHp;
     public Rigidbody2D myRGBody;
 
 /* PUBLIC VARIABLES FOR GAME SETTINGS*/
@@ -28,7 +28,7 @@ public class MeleeEnemy_script : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic_script>();
+        playerHp = GameObject.Find("Player").GetComponent<PlayerHpScript>();
     }
 
     // Update is called once per frame
@@ -72,7 +72,7 @@ public class MeleeEnemy_script : MonoBehaviour
         touchTimer++;
         if( touchTimer == 25)
         {
-            logic.TakeDemage(demage);
+            playerHp.TakeDemage(demage);
             touchTimer = 0;
         }  
     }

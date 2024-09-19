@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class EnemyHpScript : MonoBehaviour
 {
-    public Logic_script logic;
+    public PlayerLevelScript playerLevel;
     public float hp = 10;
     public int xp = 2;
 
     void Start()
     {
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic_script>();
+        playerLevel = GameObject.Find("Player").GetComponent<PlayerLevelScript>();
     }
 
 
@@ -19,7 +19,7 @@ public class EnemyHpScript : MonoBehaviour
     {
         if(hp < 0.1)
         {
-            logic.AddXP(xp);
+            playerLevel.AddXP(xp);
             Destroy(this.gameObject);
         }
     }
