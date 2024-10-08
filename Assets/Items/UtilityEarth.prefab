@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1559899496474639981}
   - component: {fileID: 1566350410646113978}
-  - component: {fileID: 4804884640202172164}
-  - component: {fileID: 5012433201545487209}
+  - component: {fileID: -4664599681502717860}
   m_Layer: 0
-  m_Name: UtilityFire
+  m_Name: UtilityEarth
   m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.915, y: -3.005, z: -1.6124339}
-  m_LocalScale: {x: 7, y: 7, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7eaa854ffa1b7b84bb7da194d8470dc3, type: 3}
-  m_Color: {r: 1, g: 0.85141665, b: 0.65471697, a: 0.6862745}
+  m_Sprite: {fileID: 21300000, guid: cbcdafa8357284342bbaeac32152fd79, type: 3}
+  m_Color: {r: 0.6603774, g: 0.51168585, b: 0.38252047, a: 0.84705883}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,42 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4804884640202172164
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354631274386336704}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.01, y: -0.03}
-  serializedVersion: 2
-  m_Radius: 0.45
---- !u!114 &5012433201545487209
+--- !u!114 &-4664599681502717860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,6 +94,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6354631274386336704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 663f679234dcf334895ab82a4ef21475, type: 3}
+  m_Script: {fileID: 11500000, guid: ebb216cee0eba4540b98c4db7d90d437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

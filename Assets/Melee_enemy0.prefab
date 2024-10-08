@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.83, y: 6.0324, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,9 +77,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 226b854c55298d64d9274b9373169379, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.0052027702, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 21300000, guid: 21562bc228959264aba94cd29dc025ce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.2, y: 0.2}
@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  logic: {fileID: 0}
+  playerHp: {fileID: 0}
   myRGBody: {fileID: 6738568742528625722}
-  speed: 4
-  demage: 5
+  speed: 5
+  demage: 3
   minDistance: 1.7
 --- !u!61 &8841175998977822778
 BoxCollider2D:
@@ -165,18 +165,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.002226472, y: 0.00000011920929}
+  m_Offset: {x: -0.0356535, y: -0.0015916452}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64203763, y: 0.64426446}
+  m_Size: {x: 0.25046527, y: 0.3269741}
   m_EdgeRadius: 0
 --- !u!114 &8749549360259895509
 MonoBehaviour:
@@ -190,6 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92f77a6bdd2831468ad8bdbb04c0a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logic: {fileID: 0}
+  playerLevel: {fileID: 0}
   hp: 5
   xp: 2

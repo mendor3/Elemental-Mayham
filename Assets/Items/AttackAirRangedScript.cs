@@ -38,12 +38,12 @@ public class AttackAirRangedScript : MonoBehaviour
         float xVec;
         if(first)
         {
-            if(player.transform.rotation.eulerAngles.z == 0)
+            if(player.transform.rotation.eulerAngles.y == 0)
             {
                 right =  true;
                 first = false;
             }else {
-                transform.rotation = Quaternion.Euler(0,0,180);
+                transform.rotation = Quaternion.Euler(0,180,0);
                 right = false;
                 first = false;
             }

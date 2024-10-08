@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Player_script : MonoBehaviour
+public class PlayerMovementScript : MonoBehaviour
 {
     public Rigidbody2D myrigidbody;
 
@@ -11,7 +11,7 @@ public class Player_script : MonoBehaviour
     public GameObject attack;
 
 
-    public float player_speed;
+    public float player_speed = 5;
 
     private float horizontal;
     private float vertical;
@@ -43,7 +43,7 @@ public class Player_script : MonoBehaviour
             transform.rotation = Quaternion.Euler(0,0,0);
 
         }else if(horizontal == -1){
-            transform.rotation = Quaternion.Euler(0,0,180);
+            transform.rotation = Quaternion.Euler(0,180,0);
         }
         
         if (horizontal != 0 && vertical != 0)

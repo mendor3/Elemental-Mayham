@@ -38,7 +38,7 @@ public class AttackPoisonRangedScript : MonoBehaviour
 
         if(right)
         {
-            transform.rotation = Quaternion.Euler(0,0,180);
+            transform.rotation = Quaternion.Euler(0,180,0);
             xVec = transform.position.x + 0.2f;
         }else {
             xVec = transform.position.x - 0.2f;

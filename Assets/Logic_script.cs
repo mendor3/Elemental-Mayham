@@ -56,6 +56,7 @@ public class Logic_script : MonoBehaviour
         spawnCounter++;
         if(spawnCounter == 50)
         {
+            Debug.Log("stage je " + stage);
             StageManager();
             SpawnManager();
             spawnCounter = 0;
@@ -201,7 +202,7 @@ public class Logic_script : MonoBehaviour
         float height = myCamera.orthographicSize + spawnOffset;
         float width = myCamera.orthographicSize * myCamera.aspect + spawnOffset;
 
-        float sides = UnityEngine.Random.Range(1,4);
+        float sides = UnityEngine.Random.Range(1,5);
 
         switch(sides)
         {

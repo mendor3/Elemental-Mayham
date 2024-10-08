@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackFireMeleeScript : MonoBehaviour
+public class UtilityEarthScript : MonoBehaviour
 {
     private ItemCatalogScript itemCatalog;
     private GameObject target;
@@ -10,13 +10,14 @@ public class AttackFireMeleeScript : MonoBehaviour
     private Renderer playerRenderer;
     private Renderer myRenderer;
 
-    private int id = 0;
+    private int id = 12;
+    private int level;
     private float demage;
     private float duration;
-    private int level;
     private float realDemage;
     private float realDuration;
     private float timer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,39 +35,18 @@ public class AttackFireMeleeScript : MonoBehaviour
     void FixedUpdate()
     {
         float xVec;
-        if(player.transform.rotation.eulerAngles.y == 0)
-        {
-            xVec = player.transform.position.x + ( playerRenderer.bounds.size.x / 2) + (myRenderer.bounds.size.x / 2);
-            transform.rotation = Quaternion.Euler(0,0,0);
-        }else {
-            xVec = player.transform.position.x - ( playerRenderer.bounds.size.x / 2) - (myRenderer.bounds.size.x / 2);
-            transform.rotation = Quaternion.Euler(0,180,0);
-        }
+        xVec = player.transform.position.x + ( playerRenderer.bounds.size.x / 2) + (myRenderer.bounds.size.x / 4);
         this.transform.position = new Vector3(xVec,player.transform.position.y,player.transform.position.z);
+
         gameObject.GetComponent<Renderer>().enabled = true;
         timer++;
-        if(timer == (int)realDuration)
+
+        if(timer >= (int)realDuration)
         {
             Destroy(gameObject);
         }
     }
 
-    public void SetLevel(int level)
-    {
-        this.level = level;
-    }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if( collision.gameObject.tag == "Enemy" )
-        {
-            target = collision.gameObject;
-            target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
-        }
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-
-    }
 }

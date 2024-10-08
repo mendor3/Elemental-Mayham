@@ -36,13 +36,13 @@ public class AttackEarthMeleeScript : MonoBehaviour
 
 
         float xVec;
-        if(player.transform.rotation.eulerAngles.z == 0)
+        if(player.transform.rotation.eulerAngles.y == 0)
         {
             xVec = player.transform.position.x + ( playerRenderer.bounds.size.x / 2) + (myRenderer.bounds.size.x / 2);
             transform.rotation = Quaternion.Euler(0,0,0);
         }else {
             xVec = player.transform.position.x - ( playerRenderer.bounds.size.x / 2) - (myRenderer.bounds.size.x / 2);
-            transform.rotation = Quaternion.Euler(0,0,180);
+            transform.rotation = Quaternion.Euler(0,180,0);
         }
         this.transform.position = new Vector3(xVec,player.transform.position.y,player.transform.position.z);
         gameObject.GetComponent<Renderer>().enabled = true;

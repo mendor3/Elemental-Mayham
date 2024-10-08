@@ -1645,11 +1645,11 @@ GameObject:
   m_Component:
   - component: {fileID: 755049009}
   - component: {fileID: 755049008}
-  - component: {fileID: 755049011}
   - component: {fileID: 755049012}
   - component: {fileID: 755049013}
   - component: {fileID: 755049015}
   - component: {fileID: 755049014}
+  - component: {fileID: 755049016}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1698,8 +1698,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c2ddf27bccf43374785da77a1cd57b7a, type: 3}
-  m_Color: {r: 0.1096974, g: 0.81886786, b: 0.27588928, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c837ed6210ac2894f8cc6a235c36fbef, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1719,46 +1719,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &755049011
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755049006}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0018465519, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.34558755
 --- !u!50 &755049012
 Rigidbody2D:
   serializedVersion: 4
@@ -1830,6 +1795,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   logic: {fileID: 0}
+--- !u!70 &755049016
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755049006}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0048577427, y: -0.0042073964}
+  m_Size: {x: 0.2109896, y: 0.34861064}
+  m_Direction: 0
 --- !u!1 &765465726
 GameObject:
   m_ObjectHideFlags: 0
@@ -5400,10 +5400,10 @@ MonoBehaviour:
   airRanged: {fileID: 6354631274386336704, guid: dec20f32fbc7f814892d2528327bf7dc, type: 3}
   poisonRanged: {fileID: 6354631274386336704, guid: 644769c329443434faba18980923d5e2, type: 3}
   fireUtility: {fileID: 6354631274386336704, guid: 996c3ac13d0972f43a176f1557830cb4, type: 3}
-  waterUtility: {fileID: 0}
-  earthUtility: {fileID: 0}
-  airUtility: {fileID: 0}
-  poisonUtility: {fileID: 0}
+  waterUtility: {fileID: 6354631274386336704, guid: 22085159f43799f41a21c79b3ca28210, type: 3}
+  earthUtility: {fileID: 6354631274386336704, guid: 6b407c4344753564f87ef86a2cc5cf2d, type: 3}
+  airUtility: {fileID: 6354631274386336704, guid: 369874f02634d8d47a3d4a6c7502be64, type: 3}
+  poisonUtility: {fileID: 6354631274386336704, guid: 845da66cfc0f18f4fbbde56355650e5d, type: 3}
 --- !u!114 &2082441949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5431,6 +5431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2781bbade01e40e44a7fcc7af11322a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  existingItems: 11
   maxItem: 6
   itemCatalog: {fileID: 2082441948}
   operatorObj: {fileID: 327664324242080872, guid: 8080b365e7519e9489e7b02375764d95, type: 3}

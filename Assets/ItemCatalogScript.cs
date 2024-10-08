@@ -134,26 +134,26 @@ public class ItemCatalogScript : MonoBehaviour
             case (10,5): return 0;
             case (10,6): return 0;
 
-            case (11,1): return 3;
-            case (11,2): return 2.8f;
-            case (11,3): return 2.6f;
-            case (11,4): return 2.4f;
-            case (11,5): return 2.2f;
-            case (11,6): return 2f;
+            case (11,1): return 5;
+            case (11,2): return 4;
+            case (11,3): return 3;
+            case (11,4): return 2;
+            case (11,5): return 1;
+            case (11,6): return 0;
 
-            case (12,1): return 3;
-            case (12,2): return 2.8f;
-            case (12,3): return 2.6f;
-            case (12,4): return 2.4f;
-            case (12,5): return 2.2f;
-            case (12,6): return 2f;
+            case (12,1): return 5;
+            case (12,2): return 5;
+            case (12,3): return 4;
+            case (12,4): return 4;
+            case (12,5): return 3;
+            case (12,6): return 2;
 
-            case (13,1): return 3;
-            case (13,2): return 2.8f;
-            case (13,3): return 2.6f;
-            case (13,4): return 2.4f;
-            case (13,5): return 2.2f;
-            case (13,6): return 2f;
+            case (13,1): return 0;
+            case (13,2): return 0;
+            case (13,3): return 0;
+            case (13,4): return 0;
+            case (13,5): return 0;
+            case (13,6): return 0;
 
             case (14,1): return 3;
             case (14,2): return 2.8f;
@@ -248,26 +248,26 @@ public class ItemCatalogScript : MonoBehaviour
             case (10,5): return 10;
             case (10,6): return 10;
 
-            case (11,1): return 3;
-            case (11,2): return 2.8f;
-            case (11,3): return 2.6f;
-            case (11,4): return 2.4f;
-            case (11,5): return 2.2f;
-            case (11,6): return 2f;
+            case (11,1): return 5;
+            case (11,2): return 5;
+            case (11,3): return 5;
+            case (11,4): return 5;
+            case (11,5): return 5;
+            case (11,6): return 5;
 
             case (12,1): return 3;
-            case (12,2): return 2.8f;
-            case (12,3): return 2.6f;
-            case (12,4): return 2.4f;
-            case (12,5): return 2.2f;
-            case (12,6): return 2f;
+            case (12,2): return 4;
+            case (12,3): return 5;
+            case (12,4): return 6;
+            case (12,5): return 7;
+            case (12,6): return 8;
 
-            case (13,1): return 3;
-            case (13,2): return 2.8f;
-            case (13,3): return 2.6f;
-            case (13,4): return 2.4f;
-            case (13,5): return 2.2f;
-            case (13,6): return 2f;
+            case (13,1): return 60;
+            case (13,2): return 60;
+            case (13,3): return 60;
+            case (13,4): return 60;
+            case (13,5): return 60;
+            case (13,6): return 60;
 
             case (14,1): return 3;
             case (14,2): return 2.8f;
@@ -361,12 +361,12 @@ public class ItemCatalogScript : MonoBehaviour
             case (10,5): return 1;
             case (10,6): return 1;
 
-            case (11,1): return 3;
-            case (11,2): return 2.8f;
-            case (11,3): return 2.6f;
-            case (11,4): return 2.4f;
-            case (11,5): return 2.2f;
-            case (11,6): return 2f;
+            case (11,1): return 1;
+            case (11,2): return 1;
+            case (11,3): return 1;
+            case (11,4): return 1;
+            case (11,5): return 1;
+            case (11,6): return 1;
 
             case (12,1): return 3;
             case (12,2): return 2.8f;
@@ -375,12 +375,12 @@ public class ItemCatalogScript : MonoBehaviour
             case (12,5): return 2.2f;
             case (12,6): return 2f;
 
-            case (13,1): return 3;
-            case (13,2): return 2.8f;
-            case (13,3): return 2.6f;
-            case (13,4): return 2.4f;
-            case (13,5): return 2.2f;
-            case (13,6): return 2f;
+            case (13,1): return 5.5f;
+            case (13,2): return 6;
+            case (13,3): return 6.5f;
+            case (13,4): return 7;
+            case (13,5): return 8;
+            case (13,6): return 10;
 
             case (14,1): return 3;
             case (14,2): return 2.8f;

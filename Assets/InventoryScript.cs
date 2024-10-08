@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
 {
+    public int existingItems = 15;
     public int maxItem = 6;
     private int?[] inventory; 
     private int itemCount = 0;
@@ -61,7 +62,7 @@ public class InventoryScript : MonoBehaviour
         int loopCount = 0;
         while (true)
         {
-            int item = UnityEngine.Random.Range(0,11);
+            int item = UnityEngine.Random.Range(0,existingItems);
             bool flag = false;
             loopCount++;
 

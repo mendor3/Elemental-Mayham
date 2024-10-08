@@ -11,7 +11,7 @@ public class CharacterScreenScript : MonoBehaviour
     {
         gameObject.SetActive(false);
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic_script>();
-        logic.StartingItem(10);
+        logic.StartingItem(0);
         Time.timeScale = 1;
     }
     public void WMButton()
@@ -26,7 +26,7 @@ public class CharacterScreenScript : MonoBehaviour
     {
         gameObject.SetActive(false);
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic_script>();
-        logic.StartingItem(7);
+        logic.StartingItem(12);
         Time.timeScale = 1;
     }
 
@@ -34,7 +34,7 @@ public class CharacterScreenScript : MonoBehaviour
     {
         gameObject.SetActive(false);
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic_script>();
-        logic.StartingItem(8);
+        logic.StartingItem(3);
         Time.timeScale = 1;
     }
 
@@ -42,7 +42,7 @@ public class CharacterScreenScript : MonoBehaviour
     {
         gameObject.SetActive(false);
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic_script>();
-        logic.StartingItem(9);
+        logic.StartingItem(14);
         Time.timeScale = 1;
     }
 

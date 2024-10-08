@@ -73,6 +73,18 @@ public class ItemOperatorScript : MonoBehaviour
             case 10:duration = itemCatalog.GetDuration(id,level);
                     realDuration = duration * 50;
                     break;
+            case 11:duration = itemCatalog.GetDuration(id,level);
+                    realDuration = duration * 50;
+                    break;
+            case 12:duration = itemCatalog.GetDuration(id,level);
+                    realDuration = duration * 50;
+                    break;
+            case 13:duration = itemCatalog.GetDuration(id,level);
+                    realDuration = duration * 50;
+                    break;
+            case 14:duration = itemCatalog.GetDuration(id,level);
+                    realDuration = duration * 50;
+                    break;
             default: break;
         }
     }
@@ -106,6 +118,14 @@ public class ItemOperatorScript : MonoBehaviour
             case 9: timer = PoisonRanged(timer); break;
 
             case 10: timer = FireUtility(timer); break;
+
+            case 11: timer = WaterUtility(timer); break;
+
+            case 12: timer = EarthUtility(timer); break;
+
+            case 13: timer = AirUtility(timer); break;
+
+            case 14: timer = PoisonUtility(timer); break;
 
             default: break;
         }
@@ -411,5 +431,56 @@ public class ItemOperatorScript : MonoBehaviour
         return timer;
     }
 
+    private int WaterUtility(int timer)
+    {
+        if ( timer >= (int)realFrequency)
+        {
+            CheckLevel();
+            attackObj = itemCatalog.GetItem(id);
+            Vector3 location = player.transform.position;
+            Instantiate( attackObj, location, Quaternion.identity);
+            return -(int)realDuration;
+        }
+        return timer;
+    }
+
+    private int EarthUtility(int timer)
+    {
+        if ( timer >= (int)realFrequency)
+        {
+            CheckLevel();
+            attackObj = itemCatalog.GetItem(id);
+            Vector3 location = player.transform.position;
+            Instantiate( attackObj, location, Quaternion.identity);
+            return -(int)realDuration;
+        }
+        return timer;
+    }
+
+    private int AirUtility(int timer)
+    {
+        if ( timer >= (int)realFrequency)
+        {
+            CheckLevel();
+            attackObj = itemCatalog.GetItem(id);
+            Vector3 location = player.transform.position;
+            Instantiate( attackObj, location, Quaternion.identity);
+            return -(int)realDuration;
+        }
+        return timer;
+    }
+
+    private int PoisonUtility(int timer)
+    {
+        if ( timer >= (int)realFrequency)
+        {
+            CheckLevel();
+            attackObj = itemCatalog.GetItem(id);
+            Vector3 location = player.transform.position;
+            Instantiate( attackObj, location, Quaternion.identity);
+            return -(int)realDuration;
+        }
+        return timer;
+    }
 
 }

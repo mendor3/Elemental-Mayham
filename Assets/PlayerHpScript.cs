@@ -13,7 +13,7 @@ public class PlayerHpScript : MonoBehaviour
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic_script>();
     }
 
-    //Reduces player hp but also checks if hp is 0 calls GameOver() from LogicScript also displayed new hp after reduction (reduction can be 0)
+    //Reduces player hp but also checks if hp is 0 calls GameOver() from LogicScript also displayed new hp after reduction (reduction can be 0) and also negative xddd
     public void TakeDemage(int demage)
     {
         hp = hp - demage;
@@ -24,4 +24,5 @@ public class PlayerHpScript : MonoBehaviour
             logic.GameOver();
         }
     }
+    
 }
