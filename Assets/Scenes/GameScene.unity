@@ -5404,6 +5404,36 @@ MonoBehaviour:
   earthUtility: {fileID: 6354631274386336704, guid: 6b407c4344753564f87ef86a2cc5cf2d, type: 3}
   airUtility: {fileID: 6354631274386336704, guid: 369874f02634d8d47a3d4a6c7502be64, type: 3}
   poisonUtility: {fileID: 6354631274386336704, guid: 845da66cfc0f18f4fbbde56355650e5d, type: 3}
+  energyMelee: {fileID: 0}
+  lavaMelee: {fileID: 0}
+  lightningMelee: {fileID: 0}
+  explosionMelee: {fileID: 6354631274386336704, guid: d0faa88258077ab4a8ebada8214d5337, type: 3}
+  natureMelee: {fileID: 0}
+  iceMelee: {fileID: 0}
+  acidMelee: {fileID: 0}
+  metalMelee: {fileID: 0}
+  radiationMelee: {fileID: 0}
+  gasMelee: {fileID: 0}
+  energyRanged: {fileID: 0}
+  lavaRanged: {fileID: 0}
+  lightningRanged: {fileID: 0}
+  explosionRanged: {fileID: 0}
+  natureRanged: {fileID: 0}
+  iceRanged: {fileID: 0}
+  acidRanged: {fileID: 0}
+  metalRanged: {fileID: 0}
+  radiationRanged: {fileID: 0}
+  gasRanged: {fileID: 0}
+  energyUtility: {fileID: 0}
+  lavaUtility: {fileID: 0}
+  lightningUtility: {fileID: 0}
+  explosionUtility: {fileID: 0}
+  natureUtility: {fileID: 0}
+  iceUtility: {fileID: 0}
+  acidUtility: {fileID: 0}
+  metalUtility: {fileID: 0}
+  radiationUtility: {fileID: 0}
+  gasUtility: {fileID: 0}
 --- !u!114 &2082441949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5431,8 +5461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2781bbade01e40e44a7fcc7af11322a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  existingItems: 11
-  maxItem: 6
+  existingItems: 15
+  maxItem: 8
+  maxLevel: 6
   itemCatalog: {fileID: 2082441948}
   operatorObj: {fileID: 327664324242080872, guid: 8080b365e7519e9489e7b02375764d95, type: 3}
   player: {fileID: 755049006}

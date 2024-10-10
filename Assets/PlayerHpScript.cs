@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHpScript : MonoBehaviour
 {
     public int hp = 100;
+    public int maxHp = 100;
     public Logic_script logic;
 
     // Start is called before the first frame update
@@ -22,6 +23,11 @@ public class PlayerHpScript : MonoBehaviour
         if( hp == 0)
         {
             logic.GameOver();
+        }
+
+        if( hp > maxHp)
+        {
+            hp = maxHp;
         }
     }
     

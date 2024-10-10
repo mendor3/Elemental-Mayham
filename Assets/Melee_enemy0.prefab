@@ -192,4 +192,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLevel: {fileID: 0}
   hp: 5
-  xp: 2
+  xp: 1000

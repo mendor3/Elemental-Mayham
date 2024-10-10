@@ -5,8 +5,9 @@ using UnityEngine;
 public class InventoryScript : MonoBehaviour
 {
     public int existingItems = 15;
-    public int maxItem = 6;
-    private int?[] inventory; 
+    public int maxItem = 8;
+    public int maxLevel = 6;
+    private int?[] inventory; //its int? because normal int cant be null
     private int itemCount = 0;
     public ItemCatalogScript itemCatalog;
     public GameObject operatorObj;
@@ -30,6 +31,13 @@ public class InventoryScript : MonoBehaviour
             {
                 itemCatalog.LevelUp(newItem);
                 lvld = true;
+                if(itemCatalog.GetCurrLevel(newItem) == maxLevel)
+                {
+                    Debug.Log("achieved max level item");
+                    CheckElementCombo(newItem,idx);
+                    //check elementsoul
+                }
+
                 break;
             }
         }
@@ -63,6 +71,7 @@ public class InventoryScript : MonoBehaviour
         while (true)
         {
             int item = UnityEngine.Random.Range(0,existingItems);
+            Debug.Log("ding! " + item);
             bool flag = false;
             loopCount++;
 
@@ -71,7 +80,7 @@ public class InventoryScript : MonoBehaviour
                 flag = true;
                 for(int i = 0; i < itemCount; i++)
                 {
-                    if(item == inventory[i] && itemCatalog.GetCurrLevel((int)inventory[i]) < 6)
+                    if(item == inventory[i] && itemCatalog.GetCurrLevel((int)inventory[i]) < maxLevel)
                     {
                         flag = false;
                     }
@@ -79,7 +88,7 @@ public class InventoryScript : MonoBehaviour
             }else {
                 for(int i = 0; i < itemCount; i++)
                 {
-                    if(item == inventory[i] && itemCatalog.GetCurrLevel((int)inventory[i]) == 6)
+                    if(item == inventory[i] && itemCatalog.GetCurrLevel((int)inventory[i]) == maxLevel)
                     {
                         flag = true;
                     }
@@ -107,12 +116,45 @@ public class InventoryScript : MonoBehaviour
         int i = 0;
         while(i <= itemCount)
         {
-            if (itemCatalog.GetCurrLevel((int)inventory[i]) != 6)
+            if (itemCatalog.GetCurrLevel((int)inventory[i]) != maxLevel)
             {
                 return false;
             }
             i++;
         }
         return true;
+    }
+
+
+    private void CheckElementCombo(int id, int arrayId)
+    {
+        string type = itemCatalog.GetType(id);
+        string element = itemCatalog.GetElement(id);
+        string element2; 
+    
+        for(int i = 0; i < itemCount; i++)
+        {
+            element2 = itemCatalog.GetElement((int)inventory[i]);
+
+            if(itemCatalog.GetType((int)inventory[i]) == type 
+            && itemCatalog.GetCurrLevel((int)inventory[i]) == maxLevel
+            && element2 != "complex"
+            && (int)inventory[i] != id)
+            {
+                Debug.Log("Found fiting item");
+
+                //Debug.Log("Deleting: " + "ItemOperator" + inventory[i] + "(Clone)" + " and also " + "ItemOperator" + inventory[arrayId] + "(Clone)");
+                Destroy(GameObject.Find("ItemOperator" + inventory[i] + "(Clone)"));
+                Destroy(GameObject.Find("ItemOperator" + inventory[arrayId] + "(Clone)"));
+
+                inventory[i] = null;
+                inventory[arrayId]= null;
+                itemCount -= 2;
+
+                InventoryUpdate(itemCatalog.GetCombo(element,element2,type));
+                break;
+            }
+        } 
+
     }
 }

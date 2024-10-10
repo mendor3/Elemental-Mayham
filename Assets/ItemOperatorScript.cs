@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
@@ -85,6 +86,11 @@ public class ItemOperatorScript : MonoBehaviour
             case 14:duration = itemCatalog.GetDuration(id,level);
                     realDuration = duration * 50;
                     break;
+
+
+            case 18: duration = itemCatalog.GetDuration(id,level);
+                    realDuration = duration * 50;
+                    break;
             default: break;
         }
     }
@@ -127,6 +133,9 @@ public class ItemOperatorScript : MonoBehaviour
 
             case 14: timer = PoisonUtility(timer); break;
 
+
+            case 18: timer = ExplosionMelee(timer); break;
+
             default: break;
         }
 
@@ -158,7 +167,7 @@ public class ItemOperatorScript : MonoBehaviour
     {
         int currLvl = level;
         this.level = itemCatalog.GetCurrLevel(id);
-        Debug.Log(currLvl + " a " + level);
+        //Debug.Log(currLvl + " a " + level);
         if(currLvl != level)
         {
             frequency = itemCatalog.GetFrequency(id,level);
@@ -477,6 +486,22 @@ public class ItemOperatorScript : MonoBehaviour
             CheckLevel();
             attackObj = itemCatalog.GetItem(id);
             Vector3 location = player.transform.position;
+            Instantiate( attackObj, location, Quaternion.identity);
+            return -(int)realDuration;
+        }
+        return timer;
+    }
+
+
+
+    private int ExplosionMelee(int timer)
+    {
+        if( timer == (int)realFrequency)
+        {
+            CheckLevel();
+            attackObj = itemCatalog.GetItem(id);
+            Vector3 location = player.transform.position;
+            attackObj.GetComponent<Renderer>().enabled = false;
             Instantiate( attackObj, location, Quaternion.identity);
             return -(int)realDuration;
         }

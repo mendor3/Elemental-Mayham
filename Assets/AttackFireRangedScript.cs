@@ -46,7 +46,6 @@ public class AttackFireRangedScript : MonoBehaviour
         }
 
         targetLoc = GetClosestEnemy(enemy_loc).position;
-        Debug.Log("Player = " + player.transform.position.x + ";" + player.transform.position.y + " and enemy = " + targetLoc.x + ";" + targetLoc.y);
     }
 
     void FixedUpdate()
