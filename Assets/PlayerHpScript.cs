@@ -20,7 +20,7 @@ public class PlayerHpScript : MonoBehaviour
         hp = hp - demage;
         logic.UpdateHp(hp);
         
-        if( hp == 0)
+        if( hp <= 0)
         {
             logic.GameOver();
         }

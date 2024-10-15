@@ -86,7 +86,14 @@ public class MeleeEnemy_script : MonoBehaviour
         }
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        
+        if(angle >= -90 && angle <= 90) //prava
+        {
+            transform.rotation = Quaternion.Euler(0,0,0);
+        }else {
+            transform.rotation = Quaternion.Euler(0,180,0);
+        }
+        //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
     }
 
 }

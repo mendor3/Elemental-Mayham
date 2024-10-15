@@ -1750,7 +1750,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &755049013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,6 +1794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  maxHp: 100
   logic: {fileID: 0}
 --- !u!70 &755049016
 CapsuleCollider2D:
@@ -3753,7 +3754,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a5d0bd8e381365a48a07e527fe72e536, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75022fea654666349ac07f8b3b4312ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3814,11 +3815,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -39, y: 29}
-  - {x: 39, y: 29}
-  - {x: 39, y: -29}
-  - {x: -39, y: -29}
-  - {x: -39, y: 29}
+  - {x: -5.10379, y: -0.10536602}
+  - {x: -5.1095724, y: 5.1024942}
+  - {x: 5.1020103, y: 5.1014824}
+  - {x: 5.1003823, y: -5.1035266}
+  - {x: -5.107357, y: -5.1118097}
+  - {x: -5.1030993, y: -0.1008348}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -5362,6 +5364,10 @@ MonoBehaviour:
   xpBar: {fileID: 320415521}
   inventory: {fileID: 2082441950}
   spawnOffset: 5
+  stage: 0
+  gameTime: 0
+  spawnTime: 0
+  spawnCounter: 0
 --- !u!4 &2082441947
 Transform:
   m_ObjectHideFlags: 0
@@ -5389,7 +5395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82b1397f56b99a438fde2aef192430b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireMelee: {fileID: 6354631274386336704, guid: 57bd61329bf825d488f8bf6549c18a81, type: 3}
+  fireMelee: {fileID: 2096372619769629858, guid: cf13f65129abb80469496019bd58c8c1, type: 3}
   waterMelee: {fileID: 6354631274386336704, guid: d58f4890058ce4a4486a9aad420e882d, type: 3}
   earthMelee: {fileID: 6354631274386336704, guid: c9fafe4a9b52b9345a87ba0df2cd0d5f, type: 3}
   airMelee: {fileID: 6354631274386336704, guid: 846c140a765f5b14d94fad5562db5148, type: 3}

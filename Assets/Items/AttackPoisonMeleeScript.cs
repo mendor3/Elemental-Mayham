@@ -19,6 +19,7 @@ public class AttackPoisonMeleeScript : MonoBehaviour
     private float realDemage;
     private float realDuration;
     private float timer = 0;
+    [SerializeField] private float poisonChance = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,14 +70,10 @@ public class AttackPoisonMeleeScript : MonoBehaviour
         {
             target = collision.gameObject;
             target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+            target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-
-    }
-
+    
     public void SetCount(int count)
     {
         this.count = count;

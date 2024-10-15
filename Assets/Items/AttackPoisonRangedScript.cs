@@ -20,7 +20,8 @@ public class AttackPoisonRangedScript : MonoBehaviour
     private float realDuration;
     private float timer = 0;
     public bool right;
-
+    [SerializeField] private float poisonChance = 10;
+    
     void Start()
     {
         itemCatalog = GameObject.FindGameObjectWithTag("Logic").GetComponent<ItemCatalogScript>();
@@ -59,6 +60,7 @@ public class AttackPoisonRangedScript : MonoBehaviour
         {
             target = collision.gameObject;
             target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+            target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
             Destroy(gameObject);
         }
     }

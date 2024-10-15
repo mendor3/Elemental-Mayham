@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1566350410646113978}
   - component: {fileID: -7067067899390490730}
   - component: {fileID: -2520678125299983750}
+  - component: {fileID: -8404109447865761065}
+  - component: {fileID: 3267881263526207667}
   m_Layer: 0
   m_Name: AttackFireMelee
   m_TagString: Attack
@@ -75,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e583ee7f47fa1704180e8ad9cdb84831, type: 3}
+  m_Sprite: {fileID: -158271589, guid: 2ebe1541a26d54a48854c98732da8690, type: 3}
   m_Color: {r: 1, g: 0.53494525, b: 0, a: 0.7607843}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,3 +151,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dfb3d51aac35c4a9b4311113a6b51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &-8404109447865761065
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6354631274386336704}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &3267881263526207667
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6354631274386336704}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

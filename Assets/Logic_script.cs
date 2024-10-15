@@ -31,18 +31,18 @@ public class Logic_script : MonoBehaviour
     public float spawnOffset = 5f;
 
 
-    private int stage = 0;
-    private float gameTime = 0;
-    private float spawnTime = 0;
-    private List<int[]> stageList;
+    [SerializeField] private int stage = 0;
+    [SerializeField] private float gameTime = 0;
+    [SerializeField] private float spawnTime = 0;
+    public int[][] stageList;
     private List<GameObject> enemyList;
-    private int spawnCounter = 0;
+    [SerializeField] private int spawnCounter = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        stageList = new List<int[]>();
+        stageList = new int[1][];
         enemyList = new List<GameObject>();
 
         StageChanger(stage);
@@ -54,12 +54,11 @@ public class Logic_script : MonoBehaviour
         TimeDisplay();
 
         spawnCounter++;
-        if(spawnCounter == 50)
+        if(spawnCounter >= 50)
         {
-            Debug.Log("stage je " + stage);
+            spawnCounter = 0;
             StageManager();
             SpawnManager();
-            spawnCounter = 0;
         }
     }
 
@@ -86,6 +85,7 @@ public class Logic_script : MonoBehaviour
     public void GameOver() 
     {
         Time.timeScale = 0;
+        Debug.Log("gameover");
         gameOverScreen.Setup(timeCount.text);
     }
 
@@ -120,7 +120,7 @@ public class Logic_script : MonoBehaviour
     {
         float minutes = Mathf.FloorToInt(gameTime/ 60); 
 
-        if( (int)minutes / 2 > stage)
+        if( (int)minutes / 1 > stage)
         {
             stage++;
             StageChanger(stage);
@@ -136,7 +136,7 @@ public class Logic_script : MonoBehaviour
         switch (stage)
         {
             case 0: 
-                stageList.Clear();
+                stageList = new int[1][];
                 enemyList.Clear();
 
                 enemyList.Add(enemyCatalog.GetEnemy(0));
@@ -144,11 +144,11 @@ public class Logic_script : MonoBehaviour
                 enemySet[0] = 0;
                 enemySet[1] = 0;
                 enemySet[2] = 2;
-                stageList.Add(enemySet);
+                stageList[0] = enemySet;
             break;
 
             case 1:
-                stageList.Clear();
+                stageList = new int[2][];
                 enemyList.Clear();
 
                 enemyList.Add(enemyCatalog.GetEnemy(0));
@@ -157,19 +157,20 @@ public class Logic_script : MonoBehaviour
                 enemySet[0] = 0;
                 enemySet[1] = 0;
                 enemySet[2] = 2;
-                stageList.Add(enemySet);
+                stageList[0] = enemySet;
+                enemySet = new int[3];
 
                 enemySet[0] = 1;
                 enemySet[1] = 0;
                 enemySet[2] = 5;
-                stageList.Add(enemySet);
+                stageList[1] = enemySet;
             break;
 
 
 
 
             default: 
-                stageList.Clear();
+                stageList = new int[1][];
                 enemyList.Clear();
 
                 enemyList.Add(enemyCatalog.GetEnemy(0));
@@ -177,17 +178,23 @@ public class Logic_script : MonoBehaviour
                 enemySet[0] = 0;
                 enemySet[1] = 0;
                 enemySet[2] = 2;
-                stageList.Add(enemySet);
+                stageList[0] = enemySet;
             break;
         }
     }
 
     //Checks if enough time elapse to spawn enemy and than increases next time by frequency
+    /*SpawnManager is called every second(50 ticks) meaning spawnTime is in seconds, stageList is structured 
+    that [x][0] = id, [x][1] = next time that enemy spawns, [x][2] = frequency of enemies spawned
+    Meaning that when spawnTime = 3 (meaning 3 seconds elapsed from start of current stage) and [x][1] = 3 
+    enemy will be spawned and time for this enemy will be increased by its frequency lets say 3, meaning
+    that this number is now 6 and until spawnTime reaches 6 nothing will happen*/
     private void SpawnManager()
     {
         spawnTime++;
-        for(int i = 0; i < stageList.Count; i++)
+        for(int i = 0; i < stageList.Length; i++)
         {
+
             if(stageList[i][1] <= spawnTime)
             {
                 SpawnEnemy(enemyList[i]);
