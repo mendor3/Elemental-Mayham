@@ -60,10 +60,12 @@ public class EnemyHpScript : MonoBehaviour
     {
         poisoned = true;
         poisonTimer = 10;
+        Debug.Log("Poison yes");
     }
 
     public void DoPoison(float chance)
     {
+        Debug.Log("poison maybe?");
         float percentage = UnityEngine.Random.Range(0,10001);
         if(percentage <= ((chance * 100) / 25))
         {

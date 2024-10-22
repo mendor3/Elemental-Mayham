@@ -173,8 +173,9 @@ public class ItemOperatorScript : MonoBehaviour
             frequency = itemCatalog.GetFrequency(id,level);
             Start();
         }
-    }   
+    }
 
+    
     private int FireMelee(int timer)
     {
         if( timer == (int)realFrequency)

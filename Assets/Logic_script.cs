@@ -167,6 +167,33 @@ public class Logic_script : MonoBehaviour
             break;
 
 
+            case 2:
+                stageList = new int[3][];
+                enemyList.Clear();
+
+                enemyList.Add(enemyCatalog.GetEnemy(0));
+                enemyList.Add(enemyCatalog.GetEnemy(1));
+                enemyList.Add(enemyCatalog.GetEnemy(5));
+
+                enemySet[0] = 0;
+                enemySet[1] = 0;
+                enemySet[2] = 2;
+                stageList[0] = enemySet;
+                enemySet = new int[3];
+
+                enemySet[0] = 1;
+                enemySet[1] = 0;
+                enemySet[2] = 5;
+                stageList[1] = enemySet;
+                enemySet = new int[3];
+
+                enemySet[0] = 2;
+                enemySet[1] = 0;
+                enemySet[2] = 8;
+                stageList[2] = enemySet;
+            break;
+
+
 
 
             default: 

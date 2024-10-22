@@ -21,6 +21,8 @@ public class AttackAirRangedScript : MonoBehaviour
     private float timer = 0;
     private bool first = true;
     private bool right = true;
+    private bool poisonEffect = false;
+    private float poisonChance = 0;
 
     void Start()
     {
@@ -31,6 +33,10 @@ public class AttackAirRangedScript : MonoBehaviour
         duration = itemCatalog.GetDuration(id,level);
         realDemage = demage;
         realDuration = duration * 50;
+        if(poisonEffect)
+        {
+            poisonChance = itemCatalog.GetPoisonPassive();
+        }
     }
 
     void FixedUpdate()
@@ -71,6 +77,10 @@ public class AttackAirRangedScript : MonoBehaviour
         {
             target = collision.gameObject;
             target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+            if(poisonEffect)
+            {
+                target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
+            }
             Destroy(gameObject);
         }
     }

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1566350410646113978}
   - component: {fileID: 64038981408172053}
   - component: {fileID: 7075058519858066079}
+  - component: {fileID: 3151679796033077514}
+  - component: {fileID: -5221564526560925142}
   m_Layer: 0
   m_Name: AttackAirRanged
   m_TagString: Attack
@@ -29,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.9, y: -3.03, z: -1.6124339}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 4.5, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,9 +77,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2bbb5e4dd53b8a54db7c4deff5ec78aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77eb03942ce742f42b21abcf22db56c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.80784315}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -121,16 +123,17 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.046655953, y: 0.5175428}
-  - {x: 0.24975951, y: 0.28344426}
-  - {x: 0.25217065, y: -0.22294772}
-  - {x: 0.11950017, y: -0.5314439}
-  - {x: -0.020355962, y: -0.5291695}
-  - {x: 0.013096722, y: -0.30440336}
-  - {x: 0.0005476568, y: 0.12068858}
-  - {x: -0.12582995, y: 0.461693}
-  - {x: -0.1240795, y: 0.5201105}
-  - {x: 0.046578214, y: 0.51703584}
+  - {x: -0.05131322, y: 0.14808568}
+  - {x: -0.009927206, y: 0.1956361}
+  - {x: 0.09636076, y: 0.10623906}
+  - {x: 0.122085825, y: -0.03325632}
+  - {x: 0.0044956896, y: -0.17478654}
+  - {x: -0.048233125, y: -0.14945447}
+  - {x: -0.04132153, y: -0.0827211}
+  - {x: 0.008054484, y: -0.070655614}
+  - {x: 0.018742632, y: 0.066350594}
+  - {x: -0.047138784, y: 0.09934208}
+  - {x: -0.050718486, y: 0.14837775}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -148,3 +151,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRGBody: {fileID: 0}
+--- !u!111 &3151679796033077514
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6354631274386336704}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 44b7f12e38a948145a76c5359d8dca62, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &-5221564526560925142
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6354631274386336704}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e22939caf74b6c42ba0cc8d34574417, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -12,6 +12,8 @@ public class ItemCatalogScript : MonoBehaviour
     public GameObject energyMelee, lavaMelee, lightningMelee, explosionMelee, natureMelee, iceMelee, acidMelee, metalMelee, radiationMelee, gasMelee;
     public GameObject energyRanged, lavaRanged, lightningRanged, explosionRanged, natureRanged, iceRanged, acidRanged, metalRanged, radiationRanged, gasRanged;
     public GameObject energyUtility, lavaUtility, lightningUtility, explosionUtility, natureUtility, iceUtility, acidUtility, metalUtility, radiationUtility, gasUtility;
+    
+    public bool poisonEffect = false;
 
     private int FM = 1, WM = 1, EM = 1, AM = 1, PM = 1,
                 FR = 1, WR = 1, ER = 1, AR = 1, PR = 1,
@@ -624,12 +626,12 @@ public class ItemCatalogScript : MonoBehaviour
             case (13,5): return 8;
             case (13,6): return 10;
 
-            case (14,1): return 3;
-            case (14,2): return 2.8f;
-            case (14,3): return 2.6f;
-            case (14,4): return 2.4f;
-            case (14,5): return 2.2f;
-            case (14,6): return 2f;
+            case (14,1): return 2;
+            case (14,2): return 2.2f;
+            case (14,3): return 2.4f;
+            case (14,4): return 2.8f;
+            case (14,5): return 3.2f;
+            case (14,6): return 3.5f;
 
 
 
@@ -722,5 +724,10 @@ public class ItemCatalogScript : MonoBehaviour
 
             case 18: ExM++; break;
             }
+    }
+
+    public float GetPoisonPassive()
+    {
+        return getDemage(14,PU);
     }
 }

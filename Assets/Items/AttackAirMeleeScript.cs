@@ -17,6 +17,9 @@ public class AttackAirMeleeScript : MonoBehaviour
     private float realDemage;
     private float realDuration;
     private float timer = 0;
+    private bool poisonEffect = false;
+    private float poisonChance = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,11 @@ public class AttackAirMeleeScript : MonoBehaviour
         duration = itemCatalog.GetDuration(id,level);
         realDemage = demage / 50;
         realDuration = duration * 50;
+        poisonEffect = itemCatalog.poisonEffect;
+        if(poisonEffect)
+        {
+            poisonChance = itemCatalog.GetPoisonPassive();
+        }
     }
     
     void FixedUpdate()
@@ -51,6 +59,10 @@ public class AttackAirMeleeScript : MonoBehaviour
         {
             target = collision.gameObject;
             target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+            if(poisonEffect)
+            {
+                target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
+            }
         }
     }
 

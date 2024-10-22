@@ -20,6 +20,9 @@ public class AttackWaterRangedScript : MonoBehaviour
     private float realDemage;
     private float realDuration;
     private float timer = 0;
+    private bool poisonEffect = false;
+    private float poisonChance = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,11 @@ public class AttackWaterRangedScript : MonoBehaviour
         duration = itemCatalog.GetDuration(id,level);
         realDemage = demage;
         realDuration = duration * 50;
+        poisonEffect = itemCatalog.poisonEffect;
+        if(poisonEffect)
+        {
+            poisonChance = itemCatalog.GetPoisonPassive();
+        }
     }
 
     void FixedUpdate()
@@ -58,6 +66,10 @@ public class AttackWaterRangedScript : MonoBehaviour
         {
             target = collision.gameObject;
             target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+            if(poisonEffect)
+            {
+                target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
+            }
             Destroy(gameObject);
         }
     }

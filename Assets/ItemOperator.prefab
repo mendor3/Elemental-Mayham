@@ -47,8 +47,8 @@ MonoBehaviour:
   player: {fileID: 0}
   itemCatalog: {fileID: 0}
   attackObj: {fileID: 0}
-  id: 4
+  id: 8
   level: 1
-  frequency: 2
+  frequency: 1
   duration: 0
   interval: 0

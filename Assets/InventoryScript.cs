@@ -71,7 +71,7 @@ public class InventoryScript : MonoBehaviour
         while (true)
         {
             int item = UnityEngine.Random.Range(0,existingItems);
-            Debug.Log("ding! " + item);
+            //Debug.Log("ding! " + item);
             bool flag = false;
             loopCount++;
 

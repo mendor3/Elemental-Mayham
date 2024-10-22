@@ -30,6 +30,8 @@ public class UtilityPoisonScript : MonoBehaviour
         duration = itemCatalog.GetDuration(id,level);
         realDemage = demage / 50;
         realDuration = duration * 50;
+
+        PoisonCoating(true);
     }
     
     void FixedUpdate()
@@ -40,16 +42,15 @@ public class UtilityPoisonScript : MonoBehaviour
         gameObject.GetComponent<Renderer>().enabled = true;
         timer++;
 
-        PoisonCoating();
-
         if(timer >= (int)realDuration)
         {
             Destroy(gameObject);
         }
     }
 
-    private void PoisonCoating()
+    //TODO after combining poison utility somewhere turn in false
+    private void PoisonCoating(bool active)
     {
-        //TODO poison damage
+        itemCatalog.poisonEffect = active;
     }
 }

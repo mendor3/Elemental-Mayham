@@ -5440,6 +5440,7 @@ MonoBehaviour:
   metalUtility: {fileID: 0}
   radiationUtility: {fileID: 0}
   gasUtility: {fileID: 0}
+  poisonEffect: 0
 --- !u!114 &2082441949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5455,6 +5456,9 @@ MonoBehaviour:
   meleeEnemy0: {fileID: 3224314702945941170, guid: 01a7657738ca8a049aa59467047b4429, type: 3}
   meleeEnemy1: {fileID: 3224314702945941170, guid: dcc03056cef0c1e4c9d969ffd556a67e, type: 3}
   meleeEnemy2: {fileID: 3224314702945941170, guid: 53ffdea9a9c41ed47a35731810d2ef86, type: 3}
+  meleeEnemy3: {fileID: 0}
+  meleeEnemy4: {fileID: 0}
+  rangedEnemy0: {fileID: 3224314702945941170, guid: b8d8277a971aeb04f8d99471e0b9e304, type: 3}
 --- !u!114 &2082441950
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,6 +17,10 @@ public class AttackFireMeleeScript : MonoBehaviour
     private float realDemage;
     private float realDuration;
     private float timer = 0;
+
+    private bool poisonEffect = false;
+    private float poisonChance = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,11 @@ public class AttackFireMeleeScript : MonoBehaviour
         duration = itemCatalog.GetDuration(id,level);
         realDemage = demage / 50;
         realDuration = duration * 50;
+        poisonEffect = itemCatalog.poisonEffect;
+        if(poisonEffect)
+        {
+            poisonChance = itemCatalog.GetPoisonPassive();
+        }
     }
     
     void FixedUpdate()
@@ -44,8 +53,10 @@ public class AttackFireMeleeScript : MonoBehaviour
         }
         this.transform.position = new Vector3(xVec,player.transform.position.y,player.transform.position.z);
         gameObject.GetComponent<Renderer>().enabled = true;
+
         timer++;
-        if(timer == (int)realDuration)
+
+        if(timer >= (int)realDuration)
         {
             Destroy(gameObject);
         }
@@ -62,6 +73,10 @@ public class AttackFireMeleeScript : MonoBehaviour
         {
             target = collision.gameObject;
             target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+            if(poisonEffect)
+            {
+                target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
+            }
         }
     }
 
