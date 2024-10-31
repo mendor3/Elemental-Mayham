@@ -56,8 +56,8 @@ public class AttackWaterMeleeScript : MonoBehaviour
                 break;
             case 2:
                 transform.rotation = Quaternion.Euler(0,0,45);
-                xVec = player.transform.position.x + ( playerRenderer.bounds.size.x / 2) + (myRenderer.bounds.size.x / 2);
-                yVec = player.transform.position.y +  playerRenderer.bounds.size.y;
+                xVec = player.transform.position.x + ( playerRenderer.bounds.size.x / 2) + (myRenderer.bounds.size.x / 4);
+                yVec = player.transform.position.y +  playerRenderer.bounds.size.y + (myRenderer.bounds.size.y / 8);
                 break;
             case 3:
                 transform.rotation = Quaternion.Euler(0,0,90);
@@ -66,8 +66,8 @@ public class AttackWaterMeleeScript : MonoBehaviour
                 break;
             case 4:
                 transform.rotation = Quaternion.Euler(0,0,135);
-                xVec = player.transform.position.x - ( playerRenderer.bounds.size.x / 2) - (myRenderer.bounds.size.x / 2);
-                yVec = player.transform.position.y + playerRenderer.bounds.size.y;
+                xVec = player.transform.position.x - ( playerRenderer.bounds.size.x / 2) - (myRenderer.bounds.size.x / 4);
+                yVec = player.transform.position.y + playerRenderer.bounds.size.y + (myRenderer.bounds.size.y / 8);
                 break;
             case 5:
                 transform.rotation = Quaternion.Euler(0,0,180);
@@ -76,8 +76,8 @@ public class AttackWaterMeleeScript : MonoBehaviour
                 break;
             case 6:
                 transform.rotation = Quaternion.Euler(0,0,225);
-                xVec = player.transform.position.x - ( playerRenderer.bounds.size.x / 2) - (myRenderer.bounds.size.x / 2);
-                yVec = player.transform.position.y - playerRenderer.bounds.size.y;
+                xVec = player.transform.position.x - ( playerRenderer.bounds.size.x / 2) - (myRenderer.bounds.size.x / 4);
+                yVec = player.transform.position.y - playerRenderer.bounds.size.y - (myRenderer.bounds.size.y / 8);
                 break;
             case 7:
                 transform.rotation = Quaternion.Euler(0,0,270);
@@ -86,8 +86,8 @@ public class AttackWaterMeleeScript : MonoBehaviour
                 break;
             case 8:
                 transform.rotation = Quaternion.Euler(0,0,315);
-                xVec = player.transform.position.x + ( playerRenderer.bounds.size.x / 2) + (myRenderer.bounds.size.x / 2);
-                yVec = player.transform.position.y - playerRenderer.bounds.size.y;
+                xVec = player.transform.position.x + ( playerRenderer.bounds.size.x / 2) + (myRenderer.bounds.size.x / 4);
+                yVec = player.transform.position.y - playerRenderer.bounds.size.y - (myRenderer.bounds.size.y / 8);
                 break;
             default:
                 transform.rotation = Quaternion.Euler(0,0,0);

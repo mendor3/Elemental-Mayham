@@ -78,7 +78,8 @@ public class Logic_script : MonoBehaviour
     //Gives player starting item with InventoryUpdate
     public void StartingItem(int id)
     {
-        inventory.InventoryUpdate(id);
+        inventory.InventoryUpdate(/*id*/1);
+        
     }
     
     // Stops game time and shows gameover screen

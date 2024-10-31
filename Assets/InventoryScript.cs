@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryScript : MonoBehaviour
 {
@@ -12,6 +15,7 @@ public class InventoryScript : MonoBehaviour
     public ItemCatalogScript itemCatalog;
     public GameObject operatorObj;
     public GameObject player; 
+    public GameObject inventoryScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +53,8 @@ public class InventoryScript : MonoBehaviour
                 if(inventory[idy] == null)
                 {
                     inventory[idy] = newItem;
-                
+
+                    InvScreenUpdate(idy,newItem);
                     GameObject itemN = operatorObj;
                     itemN.GetComponent<ItemOperatorScript>().Setup(newItem,1);
                     itemN.name = "ItemOperator" + newItem;
@@ -156,5 +161,11 @@ public class InventoryScript : MonoBehaviour
             }
         } 
 
+    }
+
+    private void InvScreenUpdate(int invId, int itemId)
+    {
+        inventoryScreen.transform.GetChild(invId).GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = itemCatalog.getSprite(itemId);
+        inventoryScreen.transform.GetChild(invId).GetChild(0).GetComponent<UnityEngine.UI.Image>().enabled = true;
     }
 }

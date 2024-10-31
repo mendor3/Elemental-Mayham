@@ -88,11 +88,16 @@ public class ItemOperatorScript : MonoBehaviour
                     break;
 
 
-            case 18: duration = itemCatalog.GetDuration(id,level);
+            case 18:duration = itemCatalog.GetDuration(id,level);
+                    realDuration = duration * 50;
+                    break;
+                    
+            case 28:duration = itemCatalog.GetDuration(id,level);
                     realDuration = duration * 50;
                     break;
             default: break;
         }
+
     }
 
     // Update is called once per frame
@@ -135,6 +140,8 @@ public class ItemOperatorScript : MonoBehaviour
 
 
             case 18: timer = ExplosionMelee(timer); break;
+
+            case 28: timer = ExplosionRanged(timer); break;
 
             default: break;
         }
@@ -503,6 +510,19 @@ public class ItemOperatorScript : MonoBehaviour
             attackObj = itemCatalog.GetItem(id);
             Vector3 location = player.transform.position;
             attackObj.GetComponent<Renderer>().enabled = false;
+            Instantiate( attackObj, location, Quaternion.identity);
+            return -(int)realDuration;
+        }
+        return timer;
+    }
+
+    private int ExplosionRanged(int timer)
+    {
+        if( timer == (int)realFrequency)
+        {
+            CheckLevel();
+            attackObj = itemCatalog.GetItem(id);
+            Vector3 location = player.transform.position;
             Instantiate( attackObj, location, Quaternion.identity);
             return -(int)realDuration;
         }

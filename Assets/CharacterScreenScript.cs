@@ -18,7 +18,7 @@ public class CharacterScreenScript : MonoBehaviour
     {
         gameObject.SetActive(false);
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic_script>();
-        logic.StartingItem(6);
+        logic.StartingItem(11);
         Time.timeScale = 1;
     }
 

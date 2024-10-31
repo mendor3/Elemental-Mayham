@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1559899496474639981}
   - component: {fileID: 1566350410646113978}
-  - component: {fileID: -7067067899390490730}
   - component: {fileID: -2520678125299983750}
+  - component: {fileID: 4152782885774386620}
   m_Layer: 0
   m_Name: MeleeExplosion
   m_TagString: Attack
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e583ee7f47fa1704180e8ad9cdb84831, type: 3}
-  m_Color: {r: 0.5698112, g: 0, b: 0.019497978, a: 0.80784315}
+  m_Sprite: {fileID: 21300000, guid: f333deb57d0dd4946a7e9b61994b2273, type: 3}
+  m_Color: {r: 0.87169814, g: 0.5291701, b: 0.4325596, a: 0.80784315}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,8 +86,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &-7067067899390490730
-EdgeCollider2D:
+--- !u!114 &-2520678125299983750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6354631274386336704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2dfb3d51aac35c4a9b4311113a6b51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &4152782885774386620
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,34 +130,6 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.17966437, y: 0.059325576}
-  - {x: 0.17635946, y: -0.07670146}
-  - {x: 0.11661634, y: -0.19657391}
-  - {x: 0.036559545, y: -0.26838282}
-  - {x: -0.03256966, y: -0.26377112}
-  - {x: -0.1129013, y: -0.124501884}
-  - {x: -0.17950535, y: -0.021318307}
-  - {x: -0.1735696, y: 0.052654874}
-  - {x: -0.008873049, y: 0.26556945}
-  - {x: 0.06644224, y: 0.26907223}
-  - {x: 0.14912727, y: 0.16817361}
-  - {x: 0.18216152, y: 0.06109879}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!114 &-2520678125299983750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354631274386336704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2dfb3d51aac35c4a9b4311113a6b51e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Offset: {x: -0.02, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.51

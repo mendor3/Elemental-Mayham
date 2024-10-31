@@ -398,6 +398,13 @@ public class ItemCatalogScript : MonoBehaviour
             case (18,5): return 3;
             case (18,6): return 2.5f;
 
+            case (28,1): return 5;
+            case (28,2): return 4.5f;
+            case (28,3): return 4;
+            case (28,4): return 3.5f;
+            case (28,5): return 3;
+            case (28,6): return 2.5f;
+
             default: return 1;
             }
     }
@@ -519,6 +526,14 @@ public class ItemCatalogScript : MonoBehaviour
             case (18,4): return 1.1f;
             case (18,5): return 1.25f;
             case (18,6): return 1.4f;
+
+            case (28,1): return 3;
+            case (28,2): return 3f;
+            case (28,3): return 3;
+            case (28,4): return 3f;
+            case (28,5): return 3;
+            case (28,6): return 3f;
+
 
             default: return 1;
         }
@@ -642,6 +657,14 @@ public class ItemCatalogScript : MonoBehaviour
             case (18,5): return 22;
             case (18,6): return 27;
 
+            case (28,1): return 10;
+            case (28,2): return 12;
+            case (28,3): return 14;
+            case (28,4): return 17;
+            case (28,5): return 20;
+            case (28,6): return 24;
+
+
             default: return 1;
         }
     }
@@ -729,5 +752,203 @@ public class ItemCatalogScript : MonoBehaviour
     public float GetPoisonPassive()
     {
         return getDemage(14,PU);
+    }
+
+    public Sprite getSprite(int id)
+    {
+        switch (id)
+        {
+            case 0: return fireMelee.GetComponent<SpriteRenderer>().sprite;
+            
+            case 1: return waterMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 2: return earthMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 3: return airMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 4: return poisonMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 5: return fireRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 6: return waterRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 7: return earthRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 8: return airRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 9: return poisonRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 10: return fireUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 11: return waterUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 12: return earthUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 13: return airUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 14: return poisonUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 15: return energyMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 16: return lavaMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 17: return lightningMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 18: return explosionMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 19: return natureMelee.GetComponent<SpriteRenderer>().sprite;;
+
+            case 20: return iceMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 21: return acidMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 22: return metalMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 23: return radiationMelee.GetComponent<SpriteRenderer>().sprite;
+
+            case 24: return gasMelee.GetComponent<SpriteRenderer>().sprite;;
+
+            case 25: return energyRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 26: return lavaRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 27: return lightningRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 28: return explosionRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 29: return natureRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 30: return iceRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 31: return acidRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 32: return metalRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 33: return radiationRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 34: return gasRanged.GetComponent<SpriteRenderer>().sprite;
+
+            case 35: return energyUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 36: return lavaUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 37: return lightningUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 38: return explosionUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 39: return natureUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 40: return iceUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 41: return acidUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 42: return metalUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 43: return radiationUtility.GetComponent<SpriteRenderer>().sprite;
+
+            case 44: return gasUtility.GetComponent<SpriteRenderer>().sprite;
+
+
+            default: return earthMelee.GetComponent<SpriteRenderer>().sprite;
+        }
+    }
+
+    public string GetName(int id)
+    {
+        switch (id)
+        {
+            case 0: return "Fire Melee";
+            
+            case 1: return "Water Melee";
+
+            case 2: return "Earth Melee";
+
+            case 3: return "Air Melee";
+
+            case 4: return "Poison Melee";
+
+            case 5: return "Fire Ranged";
+
+            case 6: return "Water Ranged";
+
+            case 7: return "Earth Ranged";
+
+            case 8: return "Air Ranged";
+
+            case 9: return "Poison Ranged";
+
+            case 10: return "Fire Utility";
+
+            case 11: return "Water Utility";
+
+            case 12: return "Earth Utility";
+
+            case 13: return "Air Utility";
+
+            case 14: return "Poison Utility";
+
+            case 15: return "Energy Melee";
+
+            case 16: return "Lava Melee";
+
+            case 17: return "Lightning Melee";
+
+            case 18: return "Explosion Melee";
+
+            case 19: return "Nature Melee";
+
+            case 20: return "Ice Melee";
+
+            case 21: return "Acid Melee";
+
+            case 22: return "Metal Melee";
+
+            case 23: return "Radiation Melee";
+
+            case 24: return "Gas Melee";
+
+            case 25: return "Energy Ranged";
+
+            case 26: return "Lava Ranged";
+
+            case 27: return "Lightning Ranged";
+
+            case 28: return "Explosion Ranged";
+
+            case 29: return "Nature Ranged";
+
+            case 30: return "Ice Ranged";
+
+            case 31: return "Acid Ranged";
+
+            case 32: return "Metal Ranged";
+
+            case 33: return "Radiation Ranged";
+
+            case 34: return "Gas Ranged";
+
+            case 35: return "Energy Utility";
+
+            case 36: return "Lava Utility";
+
+            case 37: return "Lightning Utility";
+
+            case 38: return "Explosion Utility";
+
+            case 39: return "Nature Utility";
+
+            case 40: return "Ice Utility";
+
+            case 41: return "Acid Utility";
+
+            case 42: return "Metal Utility";
+
+            case 43: return "Radiation Utility";
+
+            case 44: return "Gas Utility";
+
+
+            default: return "Earth Melee";
+        }
     }
 }
