@@ -71,14 +71,14 @@ public class Logic_script : MonoBehaviour
         gameTime += 0.02f;
         float minutes = Mathf.FloorToInt(gameTime/ 60); 
         float seconds = Mathf.FloorToInt(gameTime % 60);
-        timeCount.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timeCount.text = string.Format("{00:00}:{01:00}", minutes, seconds);
         
     }
 
     //Gives player starting item with InventoryUpdate
     public void StartingItem(int id)
     {
-        inventory.InventoryUpdate(/*id*/1);
+        inventory.InventoryUpdate(/*id*/0);
         
     }
     

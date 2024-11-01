@@ -16,7 +16,6 @@ public class AttackEarthRangedScript : MonoBehaviour
     private float duration;
     public float count;
     private int level;
-    private float realDemage;
     private float realDuration;
     private float timer = 0;
     private bool poisonEffect = false;
@@ -32,7 +31,6 @@ public class AttackEarthRangedScript : MonoBehaviour
         level = itemCatalog.GetCurrLevel(id);
         demage = itemCatalog.getDemage(id, level);
         duration = itemCatalog.GetDuration(id,level);
-        realDemage = demage / 50;
         realDuration =  duration * 50 / 3;
         poisonEffect = itemCatalog.poisonEffect;
         if(poisonEffect)
@@ -74,20 +72,26 @@ public class AttackEarthRangedScript : MonoBehaviour
         yVec = player.transform.position.y;
 
         this.transform.position = new Vector3(xVec,yVec,player.transform.position.z);
+
         timer++;
+        if(timer % 50 == 0)
+        {
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = true;
+        }
         if(timer == (int)realDuration)
         {
             Destroy(gameObject);
         }
     }
 
-
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if( collision.gameObject.tag == "Enemy" )
         {
             target = collision.gameObject;
-            target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+            target.GetComponent<EnemyHpScript>().TakeDemage(demage);
+            
             if(poisonEffect)
             {
                 target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);

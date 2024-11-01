@@ -16,7 +16,6 @@ public class AttackPoisonRangedScript : MonoBehaviour
     private float demage;
     private float duration;
     private int level;
-    private float realDemage;
     private float realDuration;
     private float timer = 0;
     public bool right;
@@ -29,7 +28,6 @@ public class AttackPoisonRangedScript : MonoBehaviour
         level = itemCatalog.GetCurrLevel(id);
         demage = itemCatalog.getDemage(id, level);
         duration = itemCatalog.GetDuration(id,level);
-        realDemage = demage;
         realDuration = duration * 50;
     }
 
@@ -54,19 +52,14 @@ public class AttackPoisonRangedScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if( collision.gameObject.tag == "Enemy" )
         {
             target = collision.gameObject;
-            target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+            target.GetComponent<EnemyHpScript>().TakeDemage(demage);
             target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
             Destroy(gameObject);
         }
-    }
-
-    public void SetDirection(bool right)
-    {
-        this.right = right;
     }
 }

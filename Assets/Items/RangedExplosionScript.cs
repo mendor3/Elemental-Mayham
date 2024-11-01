@@ -20,7 +20,6 @@ public class RangedExplosionScript : MonoBehaviour
     private float demage;
     private float duration;
     private int level;
-    private float realDemage;
     private float realDuration;
     private float timer = 0;
     private bool poisonEffect = false;
@@ -40,7 +39,6 @@ public class RangedExplosionScript : MonoBehaviour
         level = itemCatalog.GetCurrLevel(id);
         demage = itemCatalog.getDemage(id, level);
         duration = itemCatalog.GetDuration(id,level);
-        realDemage = demage * 50;
         realDuration = duration * 50;
         poisonEffect = itemCatalog.poisonEffect;
         if(poisonEffect)
@@ -109,7 +107,7 @@ public class RangedExplosionScript : MonoBehaviour
             if(!exploded)
             {
                 target = collision.gameObject;
-                target.GetComponent<EnemyHpScript>().TakeDemage(demage);
+                target.GetComponent<EnemyHpScript>().TakeDemage(demage * 2);
                 if(poisonEffect)
                 {
                     target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
@@ -117,12 +115,11 @@ public class RangedExplosionScript : MonoBehaviour
                 Explode();
             }else{
                 target = collision.gameObject;
-                target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+                target.GetComponent<EnemyHpScript>().TakeDemage(demage);
                 if(poisonEffect)
                 {
                     target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
                 }
-                Explode();
             }
         }
     }

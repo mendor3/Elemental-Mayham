@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1559899496474639981}
   - component: {fileID: 1566350410646113978}
-  - component: {fileID: -7067067899390490730}
-  - component: {fileID: -2520678125299983750}
-  - component: {fileID: -8404109447865761065}
-  - component: {fileID: 3267881263526207667}
+  - component: {fileID: 2446970543726059474}
+  - component: {fileID: 7955378843643024284}
+  - component: {fileID: 7171786402906402022}
   m_Layer: 0
   m_Name: AttackFireMelee
   m_TagString: Attack
@@ -30,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 6354631274386336704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.9, y: -3.03, z: -1.6124339}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalPosition: {x: 7.04, y: -3.5, z: -1.6124339}
+  m_LocalScale: {x: 12, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,17 +77,17 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -158271589, guid: 2ebe1541a26d54a48854c98732da8690, type: 3}
-  m_Color: {r: 1, g: 0.53494525, b: 0, a: 0.7607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &-7067067899390490730
+--- !u!68 &2446970543726059474
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,23 +122,21 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.17966437, y: 0.059325576}
-  - {x: 0.17635946, y: -0.07670146}
-  - {x: 0.11661634, y: -0.19657391}
-  - {x: 0.036559545, y: -0.26838282}
-  - {x: -0.03256966, y: -0.26377112}
-  - {x: -0.1129013, y: -0.124501884}
-  - {x: -0.17950535, y: -0.021318307}
-  - {x: -0.1735696, y: 0.052654874}
-  - {x: -0.008873049, y: 0.26556945}
-  - {x: 0.06644224, y: 0.26907223}
-  - {x: 0.14912727, y: 0.16817361}
-  - {x: 0.18216152, y: 0.06109879}
+  - {x: -0.16742674, y: 0.017014004}
+  - {x: -0.15009132, y: 0.038889095}
+  - {x: -0.06363362, y: 0.09019029}
+  - {x: 0.07983662, y: 0.1324554}
+  - {x: 0.15857004, y: 0.12816077}
+  - {x: 0.16731903, y: -0.13585046}
+  - {x: -0.022578612, y: -0.13830884}
+  - {x: -0.14098121, y: -0.039947383}
+  - {x: -0.16882175, y: -0.024526535}
+  - {x: -0.167452, y: 0.01701403}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &-2520678125299983750
+--- !u!114 &7955378843643024284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dfb3d51aac35c4a9b4311113a6b51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &-8404109447865761065
+--- !u!95 &7171786402906402022
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -161,7 +158,7 @@ Animator:
   m_GameObject: {fileID: 6354631274386336704}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23201aa2c3738274db3d849f3facc421, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -172,18 +169,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &3267881263526207667
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354631274386336704}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0

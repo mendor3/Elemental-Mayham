@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using Microsoft.Unity.VisualStudio.Editor;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,6 +35,7 @@ public class InventoryScript : MonoBehaviour
             if(newItem == inventory[idx])
             {
                 itemCatalog.LevelUp(newItem);
+                InvScreenUpdate(idx,newItem);
                 lvld = true;
                 if(itemCatalog.GetCurrLevel(newItem) == maxLevel)
                 {
@@ -54,12 +56,13 @@ public class InventoryScript : MonoBehaviour
                 {
                     inventory[idy] = newItem;
 
-                    InvScreenUpdate(idy,newItem);
+                    InvScreenAddItem(idy,newItem);
                     GameObject itemN = operatorObj;
                     itemN.GetComponent<ItemOperatorScript>().Setup(newItem,1);
                     itemN.name = "ItemOperator" + newItem;
                     Instantiate( itemN, player.transform.position, Quaternion.identity);
                     itemCount++;
+                    itemCatalog.LevelUp(newItem);
                     break;
                 }   
             }
@@ -163,9 +166,17 @@ public class InventoryScript : MonoBehaviour
 
     }
 
-    private void InvScreenUpdate(int invId, int itemId)
+    private void InvScreenAddItem(int invId, int itemId)
     {
         inventoryScreen.transform.GetChild(invId).GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = itemCatalog.getSprite(itemId);
         inventoryScreen.transform.GetChild(invId).GetChild(0).GetComponent<UnityEngine.UI.Image>().enabled = true;
+        inventoryScreen.transform.GetChild(invId).GetChild(1).GetComponent<TMP_Text>().text = "1";
+        inventoryScreen.transform.GetChild(invId).GetChild(1).GetComponent<TMP_Text>().enabled = true;
+    }
+
+    private void InvScreenUpdate(int invId, int itemId)
+    {
+        inventoryScreen.transform.GetChild(invId).GetChild(1).GetComponent<TMP_Text>().text = itemCatalog.GetCurrLevel(itemId).ToString();
+        inventoryScreen.transform.GetChild(invId).GetChild(1).GetComponent<TMP_Text>().enabled = true;
     }
 }

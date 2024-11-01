@@ -176,6 +176,7 @@ MonoBehaviour:
   playerLevel: {fileID: 0}
   hp: 3
   xp: 10
+  damagePopup: {fileID: 2185738233721936302, guid: 02e5ed9a2be0ebd48a04e4d80595759d, type: 3}
   poisoned: 0
 --- !u!114 &-8528365241946658842
 MonoBehaviour:
@@ -192,7 +193,6 @@ MonoBehaviour:
   player: {fileID: 0}
   myRGBody: {fileID: 6738568742528625722}
   speed: 5
-  minDistance: 1.7
 --- !u!114 &221482390508731781
 MonoBehaviour:
   m_ObjectHideFlags: 0

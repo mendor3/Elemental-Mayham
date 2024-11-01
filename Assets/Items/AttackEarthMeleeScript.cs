@@ -14,7 +14,6 @@ public class AttackEarthMeleeScript : MonoBehaviour
     private int level;
     private float demage;
     private float duration;
-    private float realDemage;
     private float realDuration;
     private float timer = 0;
     private bool poisonEffect = false;
@@ -30,7 +29,6 @@ public class AttackEarthMeleeScript : MonoBehaviour
         level = itemCatalog.GetCurrLevel(id);
         demage = itemCatalog.getDemage(id, level);
         duration = itemCatalog.GetDuration(id,level);
-        realDemage = demage / 50;
         realDuration = duration * 50;
         poisonEffect = itemCatalog.poisonEffect;
         if(poisonEffect)
@@ -41,8 +39,6 @@ public class AttackEarthMeleeScript : MonoBehaviour
     
     void FixedUpdate()
     {
-
-
         float xVec;
         if(player.transform.rotation.eulerAngles.y == 0)
         {
@@ -54,33 +50,30 @@ public class AttackEarthMeleeScript : MonoBehaviour
         }
         this.transform.position = new Vector3(xVec,player.transform.position.y,player.transform.position.z);
         gameObject.GetComponent<Renderer>().enabled = true;
+
         timer++;
+        if(timer % 50 == 0)
+        {
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = true;
+        }
         if(timer == (int)realDuration)
         {
             Destroy(gameObject);
         }
     }
 
-    public void SetLevel(int level)
-    {
-        this.level = level;
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if( collision.gameObject.tag == "Enemy" )
         {
             target = collision.gameObject;
-            target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+            target.GetComponent<EnemyHpScript>().TakeDemage(demage);
+            
             if(poisonEffect)
             {
                 target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
             }
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-
     }
 }

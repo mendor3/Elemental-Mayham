@@ -10,6 +10,10 @@ public class LevelUpScreenScript : MonoBehaviour
     public TMP_Text txtChoice2;
     public TMP_Text txtChoice3;
 
+    public TMP_Text txtLevel1;
+    public TMP_Text txtLevel2;
+    public TMP_Text txtLevel3;
+
     public Image btnChoice1;
     public Image btnChoice2;
     public Image btnChoice3;
@@ -38,6 +42,9 @@ public class LevelUpScreenScript : MonoBehaviour
         btnChoice1.sprite = catalog.getSprite(id1);
         btnChoice2.sprite = catalog.getSprite(id2);
         btnChoice3.sprite = catalog.getSprite(id3);
+        txtLevel1.text = (catalog.GetCurrLevel(id1) + 1).ToString();
+        txtLevel2.text = (catalog.GetCurrLevel(id2) + 1).ToString();
+        txtLevel3.text = (catalog.GetCurrLevel(id3) + 1).ToString();
     }
 
     public void ChoiceButton1()

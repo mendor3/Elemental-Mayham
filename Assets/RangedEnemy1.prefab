@@ -132,6 +132,7 @@ MonoBehaviour:
   playerLevel: {fileID: 0}
   hp: 3
   xp: 4
+  damagePopup: {fileID: 2185738233721936302, guid: 02e5ed9a2be0ebd48a04e4d80595759d, type: 3}
   poisoned: 0
 --- !u!58 &5523695411694601909
 CircleCollider2D:

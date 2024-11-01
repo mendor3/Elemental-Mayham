@@ -7,14 +7,12 @@ public class UtilityFireScript : MonoBehaviour
     private ItemCatalogScript itemCatalog;
     private GameObject target;
     private GameObject player;
-    private Renderer playerRenderer;
-    private Renderer myRenderer;
+
 
     private int id = 10;
     private int level;
     private float demage;
     private float duration;
-    private float realDemage;
     private float realDuration;
     private float timer = 0;
     private bool poisonEffect = false;
@@ -25,12 +23,9 @@ public class UtilityFireScript : MonoBehaviour
     {
         itemCatalog = GameObject.FindGameObjectWithTag("Logic").GetComponent<ItemCatalogScript>();
         player = GameObject.Find("Player");
-        playerRenderer = player.GetComponent<Renderer>();
-        myRenderer = gameObject.GetComponent<Renderer>();
         level = itemCatalog.GetCurrLevel(id);
         demage = itemCatalog.getDemage(id, level);
         duration = itemCatalog.GetDuration(id,level);
-        realDemage = demage / 50;
         realDuration = duration * 50;
         poisonEffect = itemCatalog.poisonEffect;
         if(poisonEffect)
@@ -41,31 +36,28 @@ public class UtilityFireScript : MonoBehaviour
     
     void FixedUpdate()
     {
-
-        /*float xVec;
-        if(player.transform.rotation.eulerAngles.z == 0)
-        {
-            xVec = player.transform.position.x + ( playerRenderer.bounds.size.x / 2) + (myRenderer.bounds.size.x / 2);
-            transform.rotation = Quaternion.Euler(0,0,0);
-        }else {
-            xVec = player.transform.position.x - ( playerRenderer.bounds.size.x / 2) - (myRenderer.bounds.size.x / 2);
-            transform.rotation = Quaternion.Euler(0,0,180);
-        }*/
         this.transform.position = player.transform.position;
         gameObject.GetComponent<Renderer>().enabled = true;
+        
         timer++;
+
+        if(timer % 50 == 0)
+        {
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = true;
+        }
         if(timer == (int)realDuration)
         {
             Destroy(gameObject);
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if( collision.gameObject.tag == "Enemy" )
         {
             target = collision.gameObject;
-            target.GetComponent<EnemyHpScript>().TakeDemage(realDemage);
+            target.GetComponent<EnemyHpScript>().TakeDemage(demage);
             if(poisonEffect)
             {
                 target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);

@@ -5,7 +5,6 @@ using UnityEngine;
 public class UtilityEarthScript : MonoBehaviour
 {
     private ItemCatalogScript itemCatalog;
-    private GameObject target;
     private GameObject player;
     private Renderer playerRenderer;
     private Renderer myRenderer;
@@ -14,7 +13,6 @@ public class UtilityEarthScript : MonoBehaviour
     private int level;
     private float demage;
     private float duration;
-    private float realDemage;
     private float realDuration;
     private float timer = 0;
 
@@ -28,7 +26,6 @@ public class UtilityEarthScript : MonoBehaviour
         level = itemCatalog.GetCurrLevel(id);
         demage = itemCatalog.getDemage(id, level);
         duration = itemCatalog.GetDuration(id,level);
-        realDemage = demage / 50;
         realDuration = duration * 50;
     }
     

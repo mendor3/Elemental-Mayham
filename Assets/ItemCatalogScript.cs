@@ -15,20 +15,20 @@ public class ItemCatalogScript : MonoBehaviour
     
     public bool poisonEffect = false;
 
-    private int FM = 1, WM = 1, EM = 1, AM = 1, PM = 1,
-                FR = 1, WR = 1, ER = 1, AR = 1, PR = 1,
-                FU = 1, WU = 1, EU = 1, AU = 1, PU = 1;
+    private int FM = 0, WM = 0, EM = 0, AM = 0, PM = 0,
+                FR = 0, WR = 0, ER = 0, AR = 0, PR = 0,
+                FU = 0, WU = 0, EU = 0, AU = 0, PU = 0;
 
-    private int EnM = 1, EnR = 1, EnU = 1,
-                LaM = 1, LaR = 1, LaU = 1,
-                LiM = 1, LiR = 1, LiU = 1,
-                ExM = 1, ExR = 1, ExU = 1,
-                NaM = 1, NaR = 1, NaU = 1,
-                IcM = 1, IcR = 1, IcU = 1,
-                AcM = 1, AcR = 1, AcU = 1,
-                MeM = 1, MeR = 1, MeU = 1,
-                RaM = 1, RaR = 1, RaU = 1,
-                GaM = 1, GaR = 1, GaU = 1;
+    private int EnM = 0, EnR = 0, EnU = 0,
+                LaM = 0, LaR = 0, LaU = 0,
+                LiM = 0, LiR = 0, LiU = 0,
+                ExM = 0, ExR = 0, ExU = 0,
+                NaM = 0, NaR = 0, NaU = 0,
+                IcM = 0, IcR = 0, IcU = 0,
+                AcM = 0, AcR = 0, AcU = 0,
+                MeM = 0, MeR = 0, MeU = 0,
+                RaM = 0, RaR = 0, RaU = 0,
+                GaM = 0, GaR = 0, GaU = 0;
 
     public GameObject GetItem(int id)
     {

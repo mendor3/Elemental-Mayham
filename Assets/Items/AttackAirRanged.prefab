@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1566350410646113978}
   - component: {fileID: 64038981408172053}
   - component: {fileID: 7075058519858066079}
-  - component: {fileID: 3151679796033077514}
   - component: {fileID: -5221564526560925142}
   m_Layer: 0
   m_Name: AttackAirRanged
@@ -151,21 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRGBody: {fileID: 0}
---- !u!111 &3151679796033077514
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354631274386336704}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 44b7f12e38a948145a76c5359d8dca62, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &-5221564526560925142
 Animator:
   serializedVersion: 5
