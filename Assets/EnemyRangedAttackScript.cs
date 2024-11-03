@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -9,7 +10,7 @@ public class EnemyRangedAttackScript : MonoBehaviour
     public Animator animator;
     public float attackCooldown = 1;
     public float range = 10f;
-    public float demage = 1;
+    public int damage = 1;
 
 
     private GameObject player;
@@ -17,6 +18,8 @@ public class EnemyRangedAttackScript : MonoBehaviour
     private int timer = 0;
     private bool loaded = false;
     private float distance;
+
+    [SerializeField] private bool weakness = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,17 +45,22 @@ public class EnemyRangedAttackScript : MonoBehaviour
 
             if(distance <= range)
             {
-                Shoot();
+                Shoot(damage);
                 loaded = false;
                 timer = 0;
             }
         }
     }
 
-    private void Shoot()
+    private void Shoot(int realDmg)
     {
+        if(weakness)
+        {
+            realDmg = (int)Math.Floor((double)realDmg - (realDmg / 2));//50% of damage
+        }
+
         animator.SetTrigger("Shoot");
-        bullet.GetComponent<EnemyBulletScript>().demage = demage;
+        bullet.GetComponent<EnemyBulletScript>().demage = realDmg;
         Instantiate( bullet, transform.position, Quaternion.identity);
     }
 }

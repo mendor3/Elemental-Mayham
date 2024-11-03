@@ -17,7 +17,7 @@ public class RangedExplosionScript : MonoBehaviour
 
 
     private int id = 28;
-    private float demage;
+    private float damage;
     private float duration;
     private int level;
     private float realDuration;
@@ -27,6 +27,9 @@ public class RangedExplosionScript : MonoBehaviour
     private bool exploded = false;
     [SerializeField] private float speed = 10;
     [SerializeField] Sprite explosion;
+    private int critChance = 10;
+    private int critDamage = 0;
+    private int critModifier = 1;
 
 
     // Start is called before the first frame update
@@ -37,7 +40,7 @@ public class RangedExplosionScript : MonoBehaviour
         playerRenderer = player.GetComponent<Renderer>();
         myRenderer = gameObject.GetComponent<Renderer>();
         level = itemCatalog.GetCurrLevel(id);
-        demage = itemCatalog.getDemage(id, level);
+        damage = itemCatalog.getDemage(id, level);
         duration = itemCatalog.GetDuration(id,level);
         realDuration = duration * 50;
         poisonEffect = itemCatalog.poisonEffect;
@@ -104,10 +107,16 @@ public class RangedExplosionScript : MonoBehaviour
     {
         if( collision.gameObject.tag == "Enemy" )
         {
+            float percentage = UnityEngine.Random.Range(0,101);
+            if(percentage <= critChance)
+            {
+                critDamage = (int)damage * critModifier;
+            }
+
             if(!exploded)
             {
                 target = collision.gameObject;
-                target.GetComponent<EnemyHpScript>().TakeDemage(demage * 2);
+                target.GetComponent<EnemyHpScript>().TakeDemage((damage + critDamage) * 2);
                 if(poisonEffect)
                 {
                     target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
@@ -115,12 +124,13 @@ public class RangedExplosionScript : MonoBehaviour
                 Explode();
             }else{
                 target = collision.gameObject;
-                target.GetComponent<EnemyHpScript>().TakeDemage(demage);
+                target.GetComponent<EnemyHpScript>().TakeDemage(damage + critDamage);
                 if(poisonEffect)
                 {
                     target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
                 }
             }
+            critDamage = 0;
         }
     }
 

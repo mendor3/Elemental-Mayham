@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using UnityEngine;
 
-public class MeleeExplosionScript : MonoBehaviour
+public class AttacksTemplate : MonoBehaviour
 {
     private ItemCatalogScript itemCatalog;
     private GameObject target;
@@ -11,7 +10,7 @@ public class MeleeExplosionScript : MonoBehaviour
     private Renderer playerRenderer;
     private Renderer myRenderer;
 
-    private int id = 18;
+    private int id = 100000;
     private float damage;
     private float duration;
     private int level;
@@ -19,7 +18,7 @@ public class MeleeExplosionScript : MonoBehaviour
     private float timer = 0;
     private bool poisonEffect = false;
     private float poisonChance = 0;
-    private int critChance = 10;
+    private int critChance = 0;
     private int critDamage = 0;
     private int critModifier = 1;
 
@@ -43,17 +42,7 @@ public class MeleeExplosionScript : MonoBehaviour
     
     void FixedUpdate()
     {
-        float xVec;
-        if(player.transform.rotation.eulerAngles.y == 0)
-        {
-            xVec = player.transform.position.x + ( playerRenderer.bounds.size.x / 2) + (myRenderer.bounds.size.x / 2);
-            transform.rotation = Quaternion.Euler(0,0,0);
-        }else {
-            xVec = player.transform.position.x - ( playerRenderer.bounds.size.x / 2) - (myRenderer.bounds.size.x / 2);
-            transform.rotation = Quaternion.Euler(0,180,0);
-        }
-        this.transform.position = new Vector3(xVec,player.transform.position.y,player.transform.position.z);
-        gameObject.GetComponent<Renderer>().enabled = true;
+        BasicMeleePositioning();
 
         timer++;
         if(timer % 50 == 0)
@@ -67,16 +56,11 @@ public class MeleeExplosionScript : MonoBehaviour
         }
     }
 
-    public void SetLevel(int level)
-    {
-        this.level = level;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if( collision.gameObject.tag == "Enemy" )
         {
-            float percentage = UnityEngine.Random.Range(0,101);
+            float percentage = UnityEngine.Random.Range(0,101); //Crit chance
             if(percentage <= critChance)
             {
                 critDamage = (int)damage * critModifier;
@@ -84,7 +68,8 @@ public class MeleeExplosionScript : MonoBehaviour
 
             target = collision.gameObject;
             target.GetComponent<EnemyHpScript>().TakeDemage(damage + critChance);
-            if(poisonEffect)
+
+            if(poisonEffect) //poison chance
             {
                 target.GetComponent<EnemyHpScript>().DoPoison(poisonChance);
             }
@@ -92,4 +77,18 @@ public class MeleeExplosionScript : MonoBehaviour
         }
     }
 
+    private void BasicMeleePositioning() //Basic Melee follow player and direction 
+    {
+        float xVec;
+        if(player.transform.rotation.eulerAngles.y == 0)
+        {
+            xVec = player.transform.position.x + ( playerRenderer.bounds.size.x / 2) + (myRenderer.bounds.size.x / 2);
+            transform.rotation = Quaternion.Euler(0,0,0);
+        }else {
+            xVec = player.transform.position.x - ( playerRenderer.bounds.size.x / 2) - (myRenderer.bounds.size.x / 2);
+            transform.rotation = Quaternion.Euler(0,180,0);
+        }
+        this.transform.position = new Vector3(xVec,player.transform.position.y,player.transform.position.z);
+        gameObject.GetComponent<Renderer>().enabled = true;
+    }
 }

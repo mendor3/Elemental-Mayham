@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,11 @@ using UnityEngine;
 public class EnemyMeleeAttackScript : MonoBehaviour
 {
     public PlayerHpScript playerHp;
-    public int demage = 5;
+    public int damage = 5;
     private int touchTimer = 0;
     private bool touching = false;
+
+    [SerializeField] private bool weakness = false;
 
 
 
@@ -21,7 +24,7 @@ public class EnemyMeleeAttackScript : MonoBehaviour
     {
         if(touching)
         {
-            DoDemage();
+            DoDemage(damage);
         }
     }
 
@@ -43,12 +46,17 @@ public class EnemyMeleeAttackScript : MonoBehaviour
 
 
     //MY FUNCTIONS
-    private void DoDemage()
+    private void DoDemage(int realDmg)
     {
+        if(weakness)
+        {
+            realDmg = (int)Math.Floor((double)realDmg - (realDmg / 2));//50% of damage
+        }
+
         touchTimer++;
         if( touchTimer == 25)
         {
-            playerHp.TakeDemage(demage);
+            playerHp.TakeDemage(realDmg);
             touchTimer = 0;
         }  
     }
